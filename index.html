@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Metadane strony głównej — JEDYNE miejsce, w którym są ustawiane.
+         Komponent strony dodaje wyłącznie dane strukturalne JSON-LD,
+         żeby nie powstawały dwie sprzeczne wersje tych samych tagów.
+         Skanery Open Graph (Facebook, X, WhatsApp) nie wykonują JavaScriptu,
+         więc te tagi muszą pozostać statyczne. -->
+    <title>GRANBET Zakład Kamieniarski | Nagrobki Hrubieszów, Kryłów, Dołhobyczów</title>
+    <meta name="description" content="Zakład Kamieniarski GRANBET działa od 1988 roku. Nagrobki granitowe, grobowce i fotoceramika. Kryłów, Hrubieszów i Dołhobyczów. Tel. 502 480 543.">
+    <link rel="canonical" href="https://granbet.pl/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GRANBET Zakład Kamieniarski" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:url" content="https://granbet.pl/" />
+    <meta property="og:title" content="GRANBET Zakład Kamieniarski | Nagrobki Hrubieszów, Kryłów, Dołhobyczów" />
+    <meta property="og:description" content="Zakład Kamieniarski GRANBET działa od 1988 roku. Nagrobki granitowe, grobowce i fotoceramika. Kryłów, Hrubieszów i Dołhobyczów.">
+    <!-- og:image / twitter:image celowo pominięte — w projekcie nie ma pliku
+         grafiki społecznościowej. Po dodaniu go do public/ wystarczy dopisać
+         oba tagi i zmienić twitter:card na summary_large_image. -->
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="GRANBET Zakład Kamieniarski | Nagrobki Hrubieszów, Kryłów, Dołhobyczów">
+    <meta name="twitter:description" content="Zakład Kamieniarski GRANBET działa od 1988 roku. Nagrobki granitowe, grobowce i fotoceramika. Kryłów, Hrubieszów i Dołhobyczów.">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
