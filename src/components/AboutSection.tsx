@@ -18,7 +18,7 @@ export default function AboutSection() {
               Rozumiemy, że wybór nagrobka to jedna z najtrudniejszych decyzji. Dlatego od 1988 roku towarzyszymy rodzinom w Hrubieszowie, Kryłowie i okolicach — z szacunkiem, cierpliwością i pełnym zaangażowaniem.
             </p>
             <p className="font-inter text-lg text-g-textDark leading-relaxed mb-4">
-              Nasz zakład produkcyjny mieści się w Kryłowie, przy trasie Hrubieszów–Dołhobyczów. Każdy nagrobek wykonujemy własnoręcznie — od projektu, przez obróbkę granitu i liternictwo, po montaż na cmentarzu. Biuro handlowe prowadzimy w Hrubieszowie, a w Dołhobyczowie mamy stałą ekspozycję nagrobków.
+              Nasz zakład produkcyjny mieści się w Kryłowie, przy trasie Hrubieszów–Dołhobyczów. Każdy nagrobek wykonujemy własnoręcznie — od doboru kamienia, przez obróbkę granitu i liternictwo, po montaż na cmentarzu. Biuro handlowe prowadzimy w Hrubieszowie, a w Dołhobyczowie mamy stałą ekspozycję nagrobków.
             </p>
             <p className="font-inter text-base text-g-textDarkMuted leading-relaxed">
               Firmę prowadzi Henryk Sobczuk — z dbałością o jakość kamienia i dotrzymywanie terminów.

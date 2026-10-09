@@ -2,7 +2,7 @@ import { MessageCircle, PenTool, Hammer, CheckCircle, ArrowRight } from 'lucide-
 
 const steps = [
   { icon: MessageCircle, num: '01', title: 'Konsultacja', desc: 'Zadzwoń, napisz lub odwiedź nas osobiście. Wysłuchamy i doradzimy bez presji.' },
-  { icon: PenTool, num: '02', title: 'Projekt', desc: 'Wspólnie zaprojektujemy nagrobek dopasowany do Twoich oczekiwań i budżetu.' },
+  { icon: PenTool, num: '02', title: 'Ustalenie szczegółów', desc: 'Wspólnie ustalimy wygląd nagrobka, dobierzemy kamień, napis i dodatki, uwzględniając Twoje oczekiwania oraz budżet.' },
   { icon: Hammer, num: '03', title: 'Realizacja', desc: 'Wykonujemy nagrobek we własnym zakładzie w Kryłowie — pełna kontrola jakości na każdym etapie.' },
   { icon: CheckCircle, num: '04', title: 'Montaż', desc: 'Dowozimy i montujemy nagrobek na cmentarzu — zajmujemy się wszystkim na miejscu.' },
 ];
