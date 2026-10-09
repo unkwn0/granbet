@@ -4,6 +4,16 @@ import Header from './Header';
 
 afterEach(cleanup);
 
+describe('logo', () => {
+  it('shows the granbet.pl wordmark as a link to the top with its accessible name', () => {
+    render(<Header />);
+    const logo = screen.getByRole('link', { name: 'GRANBET — powrót na górę strony' });
+    expect(logo).toHaveAttribute('href', '#');
+    expect(logo.querySelector('svg')).toHaveAttribute('aria-hidden', 'true');
+    expect(screen.queryByText(/Zakład Kamieniarski/)).not.toBeInTheDocument();
+  });
+});
+
 describe('mobile navigation', () => {
   it('opens an accessible modal, focuses close, and restores focus on Escape', async () => {
     render(<Header />);
