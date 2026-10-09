@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import * as Dialog from '@radix-ui/react-dialog';
+import GranbetWordmark from './GranbetWordmark';
 
 const navLinks = [
   { label: 'O nas', href: '#o-nas' },
@@ -47,13 +48,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 gap-2 flex items-center justify-between h-16 md:h-[72px]">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <a href="#" onClick={scrollToTop} className="block" aria-label="GRANBET — powrót na górę strony">
-            <span className={`font-playfair font-bold text-2xl transition-colors duration-300 ${scrolled ? 'text-white' : 'text-g-textDark'}`}>
-              GRANBET
-            </span>
-            <span className={`block font-cormorant text-[13px] leading-none transition-colors duration-300 ${scrolled ? 'text-g-textMuted' : 'text-g-textDarkMuted'}`}>
-              Zakład Kamieniarski od 1988 r.
-            </span>
+          <a
+            href="#"
+            onClick={scrollToTop}
+            className={`flex items-center min-h-[44px] transition-colors duration-300 ${scrolled ? 'text-white' : 'text-g-textDark'}`}
+            aria-label="GRANBET — powrót na górę strony"
+          >
+            <GranbetWordmark className="block h-[28px] md:h-[32px] w-auto" />
           </a>
         </div>
 
