@@ -54,8 +54,10 @@ export default function OfferSection() {
           ))}
         </div>
 
+        <p className="font-inter text-center text-g-textDarkMuted leading-relaxed mt-10">Wykonujemy również tablice i pomniki pamiątkowe. Zakres prac ustalamy indywidualnie.</p>
+
         {/* Usługi dodatkowe — dyskretny pasek, celowo nie konkuruje z nagrobkami */}
-        <p className="font-inter text-center text-g-textDarkMuted mt-10">
+        <p className="font-inter text-center text-g-textDarkMuted mt-3">
           Z granitu wykonujemy również <span className="text-g-textDark font-semibold">schody · parapety · blaty</span> — na zamówienie.
           Zapytaj o wycenę: <a href="tel:+48502480543" className="inline-flex items-center min-h-[44px] whitespace-nowrap text-g-goldText font-semibold hover:text-g-goldTextHover transition-colors">502 480 543</a>.
         </p>
