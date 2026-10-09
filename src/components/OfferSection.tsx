@@ -4,7 +4,7 @@ import { Gem, Landmark, Camera, Sparkles, Flower2, Phone } from 'lucide-react';
 const glowne = [
   { icon: Landmark, title: 'Grobowce', desc: 'Trwałe grobowce rodzinne — służące kolejnym pokoleniom.' },
   { icon: Camera, title: 'Fotoceramika', desc: 'Wizerunek bliskiej osoby w porcelanie i szkle — zachowany na lata.' },
-  { icon: Flower2, title: 'Akcesoria nagrobkowe', desc: 'Lampiony, wazony i elementy uzupełniające nagrobek.' },
+  { icon: Flower2, title: 'Dodatki do nagrobka', desc: 'Wazony, lampiony i inne dodatki oferujemy wyłącznie wraz z zamawianym nagrobkiem.' },
   { icon: Sparkles, title: 'Renowacja i liternictwo', desc: 'Odnawiamy stare nagrobki i wykonujemy napisy — czyszczenie i konserwacja kamienia.' },
 ];
 

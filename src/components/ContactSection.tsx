@@ -19,7 +19,7 @@ const lokalizacje = [
     adres: 'ul. Hrubieszowska 33, Kryłów (gm. Mircze)',
     tel: { display: '502 480 543', href: 'tel:+48502480543' },
     godziny: 'Pon–Pt 7:00–17:00, Sob 7:00–15:00',
-    uwaga: '',
+    uwaga: 'Podczas rozmowy w zakładzie pokażemy Ci płyty granitowe dobrane do interesującej Cię kolorystyki i budżetu.',
     mapa: 'https://maps.google.com/?q=Krylow+ul.+Hrubieszowska+33+gmina+Mircze',
   },
   {
@@ -27,7 +27,7 @@ const lokalizacje = [
     adres: 'ul. Nowa 10, Hrubieszów',
     tel: { display: '697 994 924', href: 'tel:+48697994924' },
     godziny: 'Pon–Pt 8:00–17:00, Sob 8:00–15:00',
-    uwaga: '',
+    uwaga: 'W biurze omówisz szczegóły, uzyskasz wycenę i złożysz zamówienie.',
     mapa: 'https://maps.google.com/?q=Hrubieszow+ul.+Nowa+10',
   },
   {

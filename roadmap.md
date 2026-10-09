@@ -1,0 +1,1 @@
+- [x] Wdrożyć zatwierdzone podmiany tekstowe T1–T10 w 5 wskazanych plikach; bez publikacji, nowych funkcji i zależności.
