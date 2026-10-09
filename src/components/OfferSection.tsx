@@ -26,7 +26,7 @@ export default function OfferSection() {
             <h3 className="font-playfair text-2xl md:text-3xl text-white font-bold">Nagrobki granitowe</h3>
             <p className="font-inter text-base text-g-textWarm leading-relaxed mt-2 max-w-xl">
               Pomagamy godnie upamiętnić bliskich — nagrobki pojedyncze, podwójne i urnowe z naturalnego granitu.
-              Doradzamy przy wyborze kamienia i liternictwa, wykonujemy i montujemy na miejscu.
+              Doradzamy przy wyborze kamienia i liternictwa, wykonujemy nagrobki i montujemy je na cmentarzu.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row md:flex-col gap-3 md:w-56 md:flex-shrink-0">

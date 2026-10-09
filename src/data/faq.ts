@@ -7,5 +7,5 @@ export const faqs = [
   { q: 'Jak długo czeka się na wykonanie nagrobka?', a: 'Termin realizacji ustalamy indywidualnie. Zależy on od ustalonego zakresu prac, wybranego materiału oraz aktualnej liczby zamówień. Skontaktuj się z nami, aby uzyskać aktualny termin.' },
   { q: 'Czy GRANBET wykonuje renowacje starych nagrobków?', a: 'Tak — oferujemy pełną renowację: czyszczenie kamienia, odświeżenie napisów, wymianę uszkodzonych elementów oraz konserwację. Skontaktuj się z nami, żeby omówić zakres prac.' },
   { q: 'Gdzie znajdę zakład kamieniarski w Hrubieszowie?', a: 'Biuro handlowe GRANBET mieści się przy ul. Nowej 10 w Hrubieszowie. Zakład produkcyjny działa w Kryłowie, przy trasie Hrubieszów–Dołhobyczów.' },
-  { q: 'Czy GRANBET obsługuje klientów z całego powiatu hrubieszowskiego?', a: 'Tak — obsługujemy klientów z Hrubieszowa, Kryłowa, Dołhobyczowa i całego powiatu hrubieszowskiego. Dowozimy i montujemy nagrobki bezpośrednio na cmentarzu.' },
+  { q: 'Na jakim obszarze działa GRANBET?', a: 'Obsługujemy Hrubieszów, Kryłów, Dołhobyczów i cały powiat hrubieszowski, a także miejscowości poza jego granicami. Nasze realizacje znajdują się m.in. w Zamościu, Tomaszowie Lubelskim, Chełmie, Krasnymstawie, Biłgoraju i Lublinie oraz w okolicach tych miast. Dowozimy i montujemy nagrobki bezpośrednio na cmentarzu.' },
 ];
