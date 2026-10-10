@@ -1,7 +1,7 @@
 // ─── DANE DO PRZELEWU — jedno źródło dla wyświetlania i kopiowania ────
 // Numer wpisz bez spacji (26 cyfr). Podział na grupy robi formatujRachunek.
 export const daneDoPrzelewu = {
-  odbiorca: 'HENRYK SOBCZUK Zakład Kamieniarski GRANBET',
+  odbiorca: 'Henryk Sobczuk Zakład Kamieniarski GRANBET',
   adres: 'ul. Hrubieszowska 33, Kryłów, 22-530 Mircze',
   bank: 'VeloBank',
   rachunek: '13156011956407153420040001',
