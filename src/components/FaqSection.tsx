@@ -24,12 +24,15 @@ export default function FaqSection() {
                   {faq.q}
                   <ChevronDown className={`w-5 h-5 text-g-goldText transition-transform duration-300 flex-shrink-0 ml-4 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
+                {/* Wysokość panelu dopasowuje się do treści (0fr → 1fr), bez stałego limitu. */}
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                  className={`grid transition-all duration-300 ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
-                  <div className="px-5 pb-5">
-                    <div className="h-px bg-g-gold/20 mb-4" />
-                    <p className="font-inter text-base text-g-textDarkMuted leading-relaxed">{faq.a}</p>
+                  <div className="overflow-hidden">
+                    <div className="px-5 pb-5">
+                      <div className="h-px bg-g-gold/20 mb-4" />
+                      <p className="font-inter text-base text-g-textDarkMuted leading-relaxed">{faq.a}</p>
+                    </div>
                   </div>
                 </div>
               </div>
