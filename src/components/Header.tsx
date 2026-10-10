@@ -45,7 +45,7 @@ export default function Header() {
           : 'bg-g-card'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 gap-2 flex items-center justify-between h-16 md:h-[72px]">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 gap-2 max-[359px]:px-2 max-[359px]:gap-1 flex items-center justify-between h-16 md:h-[72px]">
         {/* Logo */}
         <div className="flex-shrink-0">
           <a
@@ -54,7 +54,7 @@ export default function Header() {
             className={`flex items-center min-h-[44px] transition-colors duration-300 ${scrolled ? 'text-white' : 'text-g-textDark'}`}
             aria-label="GRANBET — powrót na górę strony"
           >
-            <GranbetWordmark className="block h-[28px] md:h-[32px] w-auto" />
+            <GranbetWordmark className="block h-[28px] max-[359px]:h-[25px] md:h-[32px] w-auto" />
           </a>
         </div>
 
@@ -74,7 +74,7 @@ export default function Header() {
         </nav>
 
         {/* Phone + hamburger */}
-        <div className="flex shrink-0 items-center gap-1 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-1 max-[359px]:gap-0 sm:gap-3">
           <a
             href="tel:+48502480543"
             className={`font-inter font-bold text-[17px] whitespace-nowrap px-5 py-2.5 rounded-lg transition-all duration-300 hidden sm:inline-flex items-center gap-2 ${
