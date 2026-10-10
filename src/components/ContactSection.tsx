@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Phone, Clock, Mail, CheckCircle, AlertCircle } from 'lucide-react';
+import DaneDoPrzelewu from './DaneDoPrzelewu';
 
 // ─── FORMULARZ → e-mail ───────────────────────────────────────────────
 // Formularz jest WYŁĄCZONY, dopóki klucz jest pusty. Bez klucza prawa kolumna
@@ -149,6 +150,11 @@ export default function ContactSection() {
               <Mail className="w-5 h-5 text-g-goldText flex-shrink-0" />
               <a href="mailto:granbet@vp.pl" className="inline-flex items-center min-h-[44px] text-g-goldText hover:text-g-goldTextHover transition-colors">granbet@vp.pl</a>
             </p>
+          </div>
+
+          {/* Dane do przelewu — pod kartami lokalizacji */}
+          <div className="lg:col-start-1" data-animate="fade-in">
+            <DaneDoPrzelewu />
           </div>
         </div>
       </div>
