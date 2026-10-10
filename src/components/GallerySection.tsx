@@ -14,7 +14,30 @@ import { Phone } from 'lucide-react';
 //
 // (Opcjonalnie) ładniejszy opis niż z nazwy pliku — klucz = nazwa bez rozszerzenia:
 const opisy: Record<string, string> = {
-  // '01-nagrobek-granitowy-pojedynczy-czarny': 'Nagrobek pojedynczy, granit Impala, Kryłów',
+  '01-nagrobek-szeroki-czarna-stela-krucyfiks': 'Szeroki nagrobek z jasnoszarą płytą i czarną stelą z krzyżem i krucyfiksem',
+  '02-nagrobek-pojedynczy-zaokraglona-plyta': 'Nagrobek pojedynczy z szarą płytą o zaokrąglonym końcu i czarną stelą z jasnym krzyżem',
+  '03-nagrobek-pojedynczy-zylkowany-kamien': 'Nagrobek pojedynczy z jasnego, żyłkowanego kamienia, z ciemnym krzyżem przy steli',
+  '04-trzy-nagrobki-wspolna-podstawa': 'Trzy nagrobki w jednej kompozycji, na wspólnej stopniowanej podstawie z ciemnego kamienia',
+  '05-nagrobek-niski-tablica-ksiega': 'Niski czarny nagrobek z poziomym krzyżem na płycie i tablicą w kształcie otwartej księgi',
+  '06-nagrobek-ciemny-prosta-forma': 'Ciemny nagrobek pojedynczy o prostej formie, z krzyżem na steli',
+  '07-nagrobek-pojedynczy-jasny-krzyz': 'Nagrobek pojedynczy z jasnoszarą płytą, ciemnymi bokami i ciemną stelą z jasnym krzyżem',
+  '08-nagrobek-podwojny-dwie-stele': 'Nagrobek podwójny z jasnoszarymi płytami, dwiema czarnymi stelami i krucyfiksem pośrodku',
+  '09-nagrobek-czerwonobrazowe-boki': 'Nagrobek z ciemną płytą, czerwonobrązowymi bokami i dwiema stelami pod wspólnym daszkiem, z jasnym krzyżem',
+  '10-nagrobek-figura-maryi': 'Nagrobek z jasnego kamienia ze złocistą figurą Maryi przy steli',
+  '11-nagrobek-podwojny-czarny-pas': 'Nagrobek podwójny z jasnoszarymi płytami, czarnym pasem i czarną stelą z krzyżem z boku',
+  '12-nagrobek-niski-skosna-tablica': 'Niski nagrobek z jasnoszarą płytą, brązowymi bokami, poziomym krzyżem i skośną tablicą',
+  '13-nagrobek-zylkowany-czarna-stela': 'Nagrobek z jasnego, żyłkowanego kamienia, z czarną stelą i wąską stelą z krzyżem',
+  '14-nagrobek-rodzinny-lancuchy': 'Nagrobek rodzinny z jasnoszarego kamienia, z dwudzielną stelą, krucyfiksem i ogrodzeniem z łańcuchów',
+};
+
+// Kadr miniaturki dla zdjęć, w których środek ucina stelę lub krzyż (klucz jak wyżej).
+// Wartość: pozycja jak CSS object-position albo 'contain' = cały obraz w kafelku na tle galerii.
+// Powiększenie (lightbox) zawsze pokazuje pełne zdjęcie.
+const kadry: Record<string, string> = {
+  '06-nagrobek-ciemny-prosta-forma': '50% 6%', // nr 209
+  '08-nagrobek-podwojny-dwie-stele': '50% 0%', // nr 189
+  '10-nagrobek-figura-maryi': '50% 22%', // nr 217
+  '13-nagrobek-zylkowany-czarna-stela': 'contain', // nr 213
 };
 // ──────────────────────────────────────────────────────────────────────
 
@@ -30,7 +53,7 @@ const realizacje = Object.entries(modules)
   .map(([path, src]) => {
     const file = path.split('/').pop() ?? '';
     const key = file.replace(/\.[^.]+$/, '');
-    return { src, file, alt: opisy[key] ?? (prettify(file) || 'Realizacja GRANBET — nagrobek granitowy') };
+    return { src, file, kadr: kadry[key], alt: opisy[key] ?? (prettify(file) || 'Realizacja GRANBET — nagrobek granitowy') };
   })
   .sort((a, b) => a.file.localeCompare(b.file, 'pl', { numeric: true }));
 
@@ -66,7 +89,12 @@ export default function GallerySection() {
                   src={r.src}
                   alt={r.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                  // Przy własnym kadrze powiększenie po najechaniu rośnie od góry, żeby nie ucinało steli;
+                  // przy 'contain' bez powiększenia, żeby nie przycinać krawędzi całego obrazu.
+                  style={r.kadr && r.kadr !== 'contain' ? { objectPosition: r.kadr, transformOrigin: 'top' } : undefined}
+                  className={`w-full h-full transition-transform duration-300 ${
+                    r.kadr === 'contain' ? 'object-contain' : 'object-cover group-hover:scale-[1.03]'
+                  }`}
                 />
                 <div className="absolute inset-0 bg-g-gold/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
