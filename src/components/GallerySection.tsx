@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { Phone } from 'lucide-react';
+import albumImage from '@/assets/album/7_a.jpg.asset.json';
 
 // ─── GALERIA REALIZACJI — DODAWANIE / USUWANIE ZDJĘĆ ──────────────────
 // Nie dotykasz kodu. Po prostu:
@@ -66,6 +67,19 @@ export default function GallerySection() {
         <p className="font-inter text-lg text-g-textMuted text-center mt-2">Każdy nagrobek to osobna historia — wykonana z szacunkiem</p>
         <div className="w-10 h-0.5 bg-g-gold mx-auto mt-4 mb-12" />
 
+        <div className="flex justify-center text-center mb-6">
+          <a
+            href="https://photos.google.com/share/AF1QipOfmUCRwRAypK-olLNgeCLx0_MNAiC6GP-uVLvcMG0jWnHA0pFIEWujlymwLvVHFw?key=eUZEQjhQREQ4OS0waENua002MDMtLTVrMk00UlBB"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-describedby="galeria-album-opis"
+            className="font-inter text-g-gold underline underline-offset-4 min-h-[44px] max-w-full inline-flex flex-wrap items-center justify-center gap-x-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep rounded-lg"
+          >
+            <span>Zobacz więcej realizacji</span><span className="whitespace-nowrap">w albumie →</span>
+          </a>
+        </div>
+        <p id="galeria-album-opis" className="sr-only">Album w Google Photos — otwiera się w nowej karcie</p>
+
         {hasPhotos ? (
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
             {realizacje.map((r, i) => (
@@ -86,6 +100,22 @@ export default function GallerySection() {
                 <div className="absolute inset-0 bg-g-gold/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             ))}
+            <a
+              href="https://photos.google.com/share/AF1QipOfmUCRwRAypK-olLNgeCLx0_MNAiC6GP-uVLvcMG0jWnHA0pFIEWujlymwLvVHFw?key=eUZEQjhQREQ4OS0waENua002MDMtLTVrMk00UlBB"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-describedby="galeria-album-opis"
+              className="relative aspect-[4/3] rounded-lg overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep"
+            >
+              <img src={albumImage.url} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-g-darkDeep/70" />
+              <div className="absolute inset-3 border border-g-gold pointer-events-none" />
+              <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
+                <h3 className="font-playfair text-2xl text-background">Więcej naszych realizacji</h3>
+                <span className="w-10 h-0.5 bg-g-gold my-4" />
+                <span className="font-inter text-base font-bold text-g-gold group-hover:text-background transition-colors whitespace-nowrap">Otwórz album →</span>
+              </div>
+            </a>
           </div>
         ) : (
           <div className="max-w-2xl mx-auto text-center bg-g-darkCard border border-g-gold/40 rounded-xl p-10">
@@ -96,22 +126,6 @@ export default function GallerySection() {
             </p>
           </div>
         )}
-
-        {/* Więcej realizacji — album Google Photos */}
-        <div className="mt-10 mb-6 flex flex-col items-center text-center">
-          <a
-            href="https://photos.google.com/share/AF1QipOfmUCRwRAypK-olLNgeCLx0_MNAiC6GP-uVLvcMG0jWnHA0pFIEWujlymwLvVHFw?key=eUZEQjhQREQ4OS0waENua002MDMtLTVrMk00UlBB"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-describedby="galeria-album-opis"
-            className="bg-transparent text-g-gold border-2 border-g-gold font-inter font-bold px-5 sm:px-8 min-h-[52px] max-w-full rounded-lg inline-flex items-center justify-center hover:bg-g-gold hover:text-g-dark transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep"
-          >
-            Zobacz więcej realizacji
-          </a>
-          <p id="galeria-album-opis" className="font-inter text-sm text-g-textMuted mt-3">
-            Album w Google Photos — otwiera się w nowej karcie
-          </p>
-        </div>
 
         {/* Telefon — zawsze pod galerią */}
         <div className="mt-4 bg-g-darkCard border border-g-gold rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
