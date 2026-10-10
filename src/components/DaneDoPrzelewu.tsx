@@ -25,7 +25,12 @@ export default function DaneDoPrzelewu() {
     <div className="bg-g-card border border-g-gold/30 rounded-lg p-5">
       <h3 className="font-cormorant text-xl text-g-goldText font-semibold mb-2">Dane do przelewu</h3>
       <p className="font-inter text-base text-g-textDark">{daneDoPrzelewu.odbiorca}</p>
-      <p className="font-inter text-base text-g-textDark">{daneDoPrzelewu.adres}</p>
+      <p className="font-inter text-base text-g-textDark">
+        {/* Kod pocztowy (np. 22-530) nie może się łamać przy myślniku. */}
+        {daneDoPrzelewu.adres.split(/(\d{2}-\d{3})/).map((czesc, i) =>
+          i % 2 ? <span key={i} className="whitespace-nowrap">{czesc}</span> : czesc,
+        )}
+      </p>
       <p className="font-inter text-sm text-g-textDarkMuted mt-3">Numer rachunku</p>
       <p className="font-inter text-lg font-semibold text-g-textDark tabular-nums tracking-wide break-words select-text">
         {formatujRachunek(daneDoPrzelewu.rachunek)}
