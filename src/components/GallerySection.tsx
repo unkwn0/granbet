@@ -30,15 +30,6 @@ const opisy: Record<string, string> = {
   '14-nagrobek-rodzinny-lancuchy': 'Nagrobek rodzinny z jasnoszarego kamienia, z dwudzielną stelą, krucyfiksem i ogrodzeniem z łańcuchów',
 };
 
-// Kadr miniaturki dla zdjęć, w których środek ucina stelę lub krzyż (klucz jak wyżej).
-// Wartość: pozycja jak CSS object-position albo 'contain' = cały obraz w kafelku na tle galerii.
-// Powiększenie (lightbox) zawsze pokazuje pełne zdjęcie.
-const kadry: Record<string, string> = {
-  '06-nagrobek-ciemny-prosta-forma': '50% 6%', // nr 209
-  '08-nagrobek-podwojny-dwie-stele': '50% 0%', // nr 189
-  '10-nagrobek-figura-maryi': '50% 22%', // nr 217
-  '13-nagrobek-zylkowany-czarna-stela': 'contain', // nr 213
-};
 // ──────────────────────────────────────────────────────────────────────
 
 const modules = import.meta.glob('@/assets/realizacje/*.{jpg,jpeg,png,webp,avif}', {
@@ -53,7 +44,7 @@ const realizacje = Object.entries(modules)
   .map(([path, src]) => {
     const file = path.split('/').pop() ?? '';
     const key = file.replace(/\.[^.]+$/, '');
-    return { src, file, kadr: kadry[key], alt: opisy[key] ?? (prettify(file) || 'Realizacja GRANBET — nagrobek granitowy') };
+    return { src, file, alt: opisy[key] ?? (prettify(file) || 'Realizacja GRANBET — nagrobek granitowy') };
   })
   .sort((a, b) => a.file.localeCompare(b.file, 'pl', { numeric: true }));
 
@@ -85,16 +76,12 @@ export default function GallerySection() {
                 aria-label={`Powiększ zdjęcie: ${r.alt}`}
                 onClick={() => openLightbox(i)}
               >
+                {/* Całe zdjęcie w kafelku 4:3, wyśrodkowane na tle galerii; bez powiększania po najechaniu. */}
                 <img
                   src={r.src}
                   alt={r.alt}
                   loading="lazy"
-                  // Przy własnym kadrze powiększenie po najechaniu rośnie od góry, żeby nie ucinało steli;
-                  // przy 'contain' bez powiększenia, żeby nie przycinać krawędzi całego obrazu.
-                  style={r.kadr && r.kadr !== 'contain' ? { objectPosition: r.kadr, transformOrigin: 'top' } : undefined}
-                  className={`w-full h-full transition-transform duration-300 ${
-                    r.kadr === 'contain' ? 'object-contain' : 'object-cover group-hover:scale-[1.03]'
-                  }`}
+                  className="w-full h-full object-contain"
                 />
                 <div className="absolute inset-0 bg-g-gold/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
