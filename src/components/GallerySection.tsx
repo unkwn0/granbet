@@ -117,7 +117,7 @@ export default function GallerySection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-describedby="galeria-album-opis"
-            className="bg-transparent text-g-gold border-2 border-g-gold font-inter font-bold px-8 min-h-[52px] max-w-full rounded-lg inline-flex items-center justify-center hover:bg-g-gold hover:text-g-dark transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep"
+            className="bg-transparent text-g-gold border-2 border-g-gold font-inter font-bold px-5 sm:px-8 min-h-[52px] max-w-full rounded-lg inline-flex items-center justify-center hover:bg-g-gold hover:text-g-dark transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep"
           >
             Zobacz więcej realizacji
           </a>
