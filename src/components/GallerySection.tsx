@@ -110,6 +110,22 @@ export default function GallerySection() {
           </div>
         )}
 
+        {/* Więcej realizacji — album Google Photos */}
+        <div className="mt-10 mb-6 flex flex-col items-center text-center">
+          <a
+            href="https://photos.google.com/share/AF1QipOfmUCRwRAypK-olLNgeCLx0_MNAiC6GP-uVLvcMG0jWnHA0pFIEWujlymwLvVHFw?key=eUZEQjhQREQ4OS0waENua002MDMtLTVrMk00UlBB"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-describedby="galeria-album-opis"
+            className="bg-transparent text-g-gold border-2 border-g-gold font-inter font-bold px-8 min-h-[52px] max-w-full rounded-lg inline-flex items-center justify-center hover:bg-g-gold hover:text-g-dark transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep"
+          >
+            Zobacz więcej realizacji
+          </a>
+          <p id="galeria-album-opis" className="font-inter text-sm text-g-textMuted mt-3">
+            Album w Google Photos — otwiera się w nowej karcie
+          </p>
+        </div>
+
         {/* Telefon — zawsze pod galerią */}
         <div className="mt-4 bg-g-darkCard border border-g-gold rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-playfair text-lg text-g-textLight">Chcesz zamówić podobny nagrobek?</span>
