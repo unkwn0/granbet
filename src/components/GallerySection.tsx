@@ -1,55 +1,59 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { Phone } from 'lucide-react';
 import albumImage from '@/assets/album/7_a.jpg.asset.json';
+import { Button } from '@/components/ui/button';
+import photo01 from '@/assets/realizacje/a15/01-kn079-sg124.jpg.asset.json';
+import photo02 from '@/assets/realizacje/a15/02-kn024-sg117.jpg.asset.json';
+import photo03 from '@/assets/realizacje/a15/03-kn019-sg009.jpg.asset.json';
+import photo04 from '@/assets/realizacje/a15/04-kn088-sg130.jpg.asset.json';
+import photo05 from '@/assets/realizacje/a15/05-kn017-sg116.jpg.asset.json';
+import photo06 from '@/assets/realizacje/a15/06-kn084-sg127.jpg.asset.json';
+import photo07 from '@/assets/realizacje/a15/07-kn060-sg113.jpg.asset.json';
+import photo08 from '@/assets/realizacje/a15/08-kn056.jpg.asset.json';
+import photo09 from '@/assets/realizacje/a15/09-kn077-sg122.jpg.asset.json';
+import photo10 from '@/assets/realizacje/a15/10-kn103-sg148.jpg.asset.json';
+import photo11 from '@/assets/realizacje/a15/11-kn085-sg128.jpg.asset.json';
+import photo12 from '@/assets/realizacje/a15/12-kn076-sg089.jpg.asset.json';
+import photo13 from '@/assets/realizacje/a15/13-kn023-sg135.jpg.asset.json';
+import photo14 from '@/assets/realizacje/a15/14-kn042-sg138.jpg.asset.json';
+import photo15 from '@/assets/realizacje/a15/15-kn069-sg103.jpg.asset.json';
 
-// ─── GALERIA REALIZACJI — DODAWANIE / USUWANIE ZDJĘĆ ──────────────────
-// Nie dotykasz kodu. Po prostu:
-//   • DODAJ zdjęcie → wrzuć plik do   src/assets/realizacje/
-//   • USUŃ zdjęcie  → skasuj plik z   src/assets/realizacje/
-// Zdjęcia pojawią się / znikną same po publikacji.
-// Kolejność = wg nazwy pliku → nazywaj 01-..., 02-... itd.
-// Nazwa pliku staje się opisem (alt, ważne dla Google) — nazywaj po ludzku,
-// np.  01-nagrobek-granitowy-pojedynczy-czarny.jpg
-//
-// (Opcjonalnie) ładniejszy opis niż z nazwy pliku — klucz = nazwa bez rozszerzenia:
-const opisy: Record<string, string> = {
-  '01-nagrobek-szeroki-czarna-stela-krucyfiks': 'Szeroki nagrobek z jasnoszarą płytą i czarną stelą z krzyżem i krucyfiksem',
-  '02-nagrobek-pojedynczy-zaokraglona-plyta': 'Nagrobek pojedynczy z szarą płytą o zaokrąglonym końcu i czarną stelą z jasnym krzyżem',
-  '03-nagrobek-pojedynczy-zylkowany-kamien': 'Nagrobek pojedynczy z jasnego, żyłkowanego kamienia, z ciemnym krzyżem przy steli',
-  '04-trzy-nagrobki-wspolna-podstawa': 'Trzy nagrobki w jednej kompozycji, na wspólnej stopniowanej podstawie z ciemnego kamienia',
-  '05-nagrobek-niski-tablica-ksiega': 'Niski czarny nagrobek z poziomym krzyżem na płycie i tablicą w kształcie otwartej księgi',
-  '06-nagrobek-ciemny-prosta-forma': 'Ciemny nagrobek pojedynczy o prostej formie, z krzyżem na steli',
-  '07-nagrobek-pojedynczy-jasny-krzyz': 'Nagrobek pojedynczy z jasnoszarą płytą, ciemnymi bokami i ciemną stelą z jasnym krzyżem',
-  '08-nagrobek-podwojny-dwie-stele': 'Nagrobek podwójny z jasnoszarymi płytami, dwiema czarnymi stelami i krucyfiksem pośrodku',
-  '09-nagrobek-czerwonobrazowe-boki': 'Nagrobek z ciemną płytą, czerwonobrązowymi bokami i dwiema stelami pod wspólnym daszkiem, z jasnym krzyżem',
-  '10-nagrobek-figura-maryi': 'Nagrobek z jasnego kamienia ze złocistą figurą Maryi przy steli',
-  '11-nagrobek-podwojny-czarny-pas': 'Nagrobek podwójny z jasnoszarymi płytami, czarnym pasem i czarną stelą z krzyżem z boku',
-  '12-nagrobek-niski-skosna-tablica': 'Niski nagrobek z jasnoszarą płytą, brązowymi bokami, poziomym krzyżem i skośną tablicą',
-  '13-nagrobek-zylkowany-czarna-stela': 'Nagrobek z jasnego, żyłkowanego kamienia, z czarną stelą i wąską stelą z krzyżem',
-  '14-nagrobek-rodzinny-lancuchy': 'Nagrobek rodzinny z jasnoszarego kamienia, z dwudzielną stelą, krucyfiksem i ogrodzeniem z łańcuchów',
-};
-
-// ──────────────────────────────────────────────────────────────────────
-
-const modules = import.meta.glob('@/assets/realizacje/*.{jpg,jpeg,png,webp,avif}', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>;
-
-const prettify = (file: string) =>
-  file.replace(/\.[^.]+$/, '').replace(/^\d+[-_\s]*/, '').replace(/[-_]+/g, ' ').trim();
-
-const realizacje = Object.entries(modules)
-  .map(([path, src]) => {
-    const file = path.split('/').pop() ?? '';
-    const key = file.replace(/\.[^.]+$/, '');
-    return { src, file, alt: opisy[key] ?? (prettify(file) || 'Realizacja GRANBET — nagrobek granitowy') };
-  })
-  .sort((a, b) => a.file.localeCompare(b.file, 'pl', { numeric: true }));
+// Jawna kolejność A15 — niezależna od nazw plików i sortowania.
+const realizacje = [
+  { src: photo01.url, alt: 'Ciemna płyta z odbiciami i pionowa tablica z krzyżem' },
+  { src: photo02.url, alt: 'Kompozycja płyt i tablic na wspólnej stopniowanej podstawie' },
+  { src: photo03.url, alt: 'Płyta z falistym dodatkiem i zaokrąglona tablica z owalnym portretem' },
+  { src: photo04.url, alt: 'Jasna płyta i profilowana tablica z figurą' },
+  { src: photo05.url, alt: 'Jasna płyta z łukowym frontem i brązowa tablica' },
+  { src: photo06.url, alt: 'Jasna płyta o wyrazistym wzorze i ciemna tablica z krzyżem' },
+  { src: photo07.url, alt: 'Ciemna płyta z brązowymi bokami i tablica z jasnym krzyżem' },
+  { src: photo08.url, alt: 'Jasna płyta z brązowym falistym pasem i ciemna tablica z krucyfiksem' },
+  { src: photo09.url, alt: 'Jasna prostokątna płyta i ciemna tablica z krzyżem' },
+  { src: photo10.url, alt: 'Rozległa kompozycja płyt na podstawie otoczonej słupkami i łańcuchami' },
+  { src: photo11.url, alt: 'Szeroka jasna płyta i ciemna tablica z krzyżem' },
+  { src: photo12.url, alt: 'Jasna płyta z brązową falą i brązowa tablica ze złocistym krucyfiksem' },
+  { src: photo13.url, alt: 'Jasna płyta z zaokrąglonym frontem i ciemna tablica z wysokim krzyżem' },
+  { src: photo14.url, alt: 'Jasna płyta na stopniowanej podstawie z krzyżem i wazonem' },
+  { src: photo15.url, alt: 'Ciemna płyta z poziomym krzyżem i tablicą w kształcie otwartej księgi' },
+];
 
 export default function GallerySection() {
+  const [expanded, setExpanded] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!expanded || window.matchMedia('(min-width: 768px)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // Wspólny hook pomija galerię; nowe zdjęcia animujemy lokalnie bez ukrywania treści.
+    const animations = Array.from(gridRef.current?.querySelectorAll('[data-gallery-extra]') ?? [])
+      .flatMap(element => element.animate ? [element.animate(
+        [{ transform: 'translateY(12px)' }, { transform: 'translateY(0)' }],
+        { duration: 300, easing: 'ease-out', fill: 'none' }
+      )] : []);
+    return () => animations.forEach(animation => animation.cancel());
+  }, [expanded]);
+
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
@@ -81,12 +85,13 @@ export default function GallerySection() {
         <p id="galeria-album-opis" className="sr-only">Album w Google Photos — otwiera się w nowej karcie</p>
 
         {hasPhotos ? (
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+          <div id="galeria-realizacje" ref={gridRef} className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
             {realizacje.map((r, i) => (
               <button
                 key={r.src}
                 data-animate="fade-in"
-                className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep"
+                data-gallery-extra={i >= 6 ? true : undefined}
+                className={`relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep ${i >= 6 && !expanded ? 'hidden md:block' : ''}`}
                 aria-label={`Powiększ zdjęcie: ${r.alt}`}
                 onClick={() => openLightbox(i)}
               >
@@ -126,6 +131,18 @@ export default function GallerySection() {
             </p>
           </div>
         )}
+
+        <div className="flex justify-center mt-6 md:hidden">
+          <Button
+            variant="ghost"
+            className="font-inter text-base text-g-gold border border-g-gold min-h-[44px] hover:bg-g-gold/15 hover:text-g-gold focus-visible:ring-g-gold focus-visible:ring-offset-g-darkDeep"
+            aria-expanded={expanded}
+            aria-controls="galeria-realizacje"
+            onClick={() => setExpanded(value => !value)}
+          >
+            {expanded ? 'Pokaż mniej' : 'Pokaż więcej'}
+          </Button>
+        </div>
 
         {/* Telefon — zawsze pod galerią */}
         <div className="mt-4 bg-g-darkCard border border-g-gold rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
