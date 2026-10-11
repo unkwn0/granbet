@@ -110,7 +110,6 @@ export default function GallerySection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-describedby="galeria-album-opis"
-              {/* lg: pełnow szerokości niski baner (3 kolumny, ~192px); md: zwykły kafelek 4:3; mobile: tylko po rozwinięciu */}
               className={`relative aspect-[4/3] rounded-lg overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep ${!expanded ? 'hidden md:block' : ''} lg:col-span-3 lg:aspect-auto lg:h-48`}
             >
               <img src={albumImage.url} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
