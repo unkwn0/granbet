@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { Phone } from 'lucide-react';
-import albumImage from '@/assets/album/7_a.jpg.asset.json';
+import albumImage from '@/assets/album/7_a.webp.asset.json';
 import { Button } from '@/components/ui/button';
 import photo01 from '@/assets/realizacje/a15/01-kn079-sg124.jpg.asset.json';
 import photo02 from '@/assets/realizacje/a15/02-kn024-sg117.jpg.asset.json';
@@ -20,23 +20,39 @@ import photo13 from '@/assets/realizacje/a15/13-kn023-sg135.jpg.asset.json';
 import photo14 from '@/assets/realizacje/a15/14-kn042-sg138.jpg.asset.json';
 import photo15 from '@/assets/realizacje/a15/15-kn069-sg103.jpg.asset.json';
 
+import thumbnail01 from '@/assets/realizacje/a15/thumbs/01-kn079-sg124.webp.asset.json';
+import thumbnail02 from '@/assets/realizacje/a15/thumbs/02-kn024-sg117.webp.asset.json';
+import thumbnail03 from '@/assets/realizacje/a15/thumbs/03-kn019-sg009.webp.asset.json';
+import thumbnail04 from '@/assets/realizacje/a15/thumbs/04-kn088-sg130.webp.asset.json';
+import thumbnail05 from '@/assets/realizacje/a15/thumbs/05-kn017-sg116.webp.asset.json';
+import thumbnail06 from '@/assets/realizacje/a15/thumbs/06-kn084-sg127.webp.asset.json';
+import thumbnail07 from '@/assets/realizacje/a15/thumbs/07-kn060-sg113.webp.asset.json';
+import thumbnail08 from '@/assets/realizacje/a15/thumbs/08-kn056.webp.asset.json';
+import thumbnail09 from '@/assets/realizacje/a15/thumbs/09-kn077-sg122.webp.asset.json';
+import thumbnail10 from '@/assets/realizacje/a15/thumbs/10-kn103-sg148.webp.asset.json';
+import thumbnail11 from '@/assets/realizacje/a15/thumbs/11-kn085-sg128.webp.asset.json';
+import thumbnail12 from '@/assets/realizacje/a15/thumbs/12-kn076-sg089.webp.asset.json';
+import thumbnail13 from '@/assets/realizacje/a15/thumbs/13-kn023-sg135.webp.asset.json';
+import thumbnail14 from '@/assets/realizacje/a15/thumbs/14-kn042-sg138.webp.asset.json';
+import thumbnail15 from '@/assets/realizacje/a15/thumbs/15-kn069-sg103.webp.asset.json';
+
 // Jawna kolejność A15 — niezależna od nazw plików i sortowania.
 const realizacje = [
-  { src: photo01.url, alt: 'Ciemna płyta z odbiciami i pionowa tablica z krzyżem' },
-  { src: photo02.url, alt: 'Kompozycja płyt i tablic na wspólnej stopniowanej podstawie' },
-  { src: photo03.url, alt: 'Płyta z falistym dodatkiem i zaokrąglona tablica z owalnym portretem' },
-  { src: photo04.url, alt: 'Jasna płyta i profilowana tablica z figurą' },
-  { src: photo05.url, alt: 'Jasna płyta z łukowym frontem i brązowa tablica' },
-  { src: photo06.url, alt: 'Jasna płyta o wyrazistym wzorze i ciemna tablica z krzyżem' },
-  { src: photo07.url, alt: 'Ciemna płyta z brązowymi bokami i tablica z jasnym krzyżem' },
-  { src: photo08.url, alt: 'Jasna płyta z brązowym falistym pasem i ciemna tablica z krucyfiksem' },
-  { src: photo09.url, alt: 'Jasna prostokątna płyta i ciemna tablica z krzyżem' },
-  { src: photo10.url, alt: 'Rozległa kompozycja płyt na podstawie otoczonej słupkami i łańcuchami' },
-  { src: photo11.url, alt: 'Szeroka jasna płyta i ciemna tablica z krzyżem' },
-  { src: photo12.url, alt: 'Jasna płyta z brązową falą i brązowa tablica ze złocistym krucyfiksem' },
-  { src: photo13.url, alt: 'Jasna płyta z zaokrąglonym frontem i ciemna tablica z wysokim krzyżem' },
-  { src: photo14.url, alt: 'Jasna płyta na stopniowanej podstawie z krzyżem i wazonem' },
-  { src: photo15.url, alt: 'Ciemna płyta z poziomym krzyżem i tablicą w kształcie otwartej księgi' },
+  { src: photo01.url, thumbnail: thumbnail01.url, alt: 'Ciemna płyta z odbiciami i pionowa tablica z krzyżem' },
+  { src: photo02.url, thumbnail: thumbnail02.url, alt: 'Kompozycja płyt i tablic na wspólnej stopniowanej podstawie' },
+  { src: photo03.url, thumbnail: thumbnail03.url, alt: 'Płyta z falistym dodatkiem i zaokrąglona tablica z owalnym portretem' },
+  { src: photo04.url, thumbnail: thumbnail04.url, alt: 'Jasna płyta i profilowana tablica z figurą' },
+  { src: photo05.url, thumbnail: thumbnail05.url, alt: 'Jasna płyta z łukowym frontem i brązowa tablica' },
+  { src: photo06.url, thumbnail: thumbnail06.url, alt: 'Jasna płyta o wyrazistym wzorze i ciemna tablica z krzyżem' },
+  { src: photo07.url, thumbnail: thumbnail07.url, alt: 'Ciemna płyta z brązowymi bokami i tablica z jasnym krzyżem' },
+  { src: photo08.url, thumbnail: thumbnail08.url, alt: 'Jasna płyta z brązowym falistym pasem i ciemna tablica z krucyfiksem' },
+  { src: photo09.url, thumbnail: thumbnail09.url, alt: 'Jasna prostokątna płyta i ciemna tablica z krzyżem' },
+  { src: photo10.url, thumbnail: thumbnail10.url, alt: 'Rozległa kompozycja płyt na podstawie otoczonej słupkami i łańcuchami' },
+  { src: photo11.url, thumbnail: thumbnail11.url, alt: 'Szeroka jasna płyta i ciemna tablica z krzyżem' },
+  { src: photo12.url, thumbnail: thumbnail12.url, alt: 'Jasna płyta z brązową falą i brązowa tablica ze złocistym krucyfiksem' },
+  { src: photo13.url, thumbnail: thumbnail13.url, alt: 'Jasna płyta z zaokrąglonym frontem i ciemna tablica z wysokim krzyżem' },
+  { src: photo14.url, thumbnail: thumbnail14.url, alt: 'Jasna płyta na stopniowanej podstawie z krzyżem i wazonem' },
+  { src: photo15.url, thumbnail: thumbnail15.url, alt: 'Ciemna płyta z poziomym krzyżem i tablicą w kształcie otwartej księgi' },
 ];
 
 export default function GallerySection() {
@@ -97,7 +113,7 @@ export default function GallerySection() {
               >
                 {/* Całe zdjęcie w kafelku 4:3, wyśrodkowane na tle galerii; bez powiększania po najechaniu. */}
                 <img
-                  src={r.src}
+                  src={r.thumbnail}
                   alt={r.alt}
                   loading="lazy"
                   className="w-full h-full object-contain"
@@ -159,6 +175,7 @@ export default function GallerySection() {
           open={lightboxOpen}
           close={() => setLightboxOpen(false)}
           index={lightboxIndex}
+          carousel={{ preload: 0 }}
           slides={realizacje.map(r => ({ src: r.src, alt: r.alt }))}
           styles={{ container: { backgroundColor: '#000000' } }}
         />
