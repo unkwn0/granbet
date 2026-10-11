@@ -3,8 +3,8 @@ import { describe, expect, it, vi } from 'vitest';
 import GallerySection from './GallerySection';
 
 vi.mock('yet-another-react-lightbox', () => ({
-  default: ({ open, index, slides }: { open: boolean; index: number; slides: { src: string }[] }) =>
-    open ? <div data-testid="lightbox" data-index={index} data-count={slides.length} /> : null,
+  default: ({ open, index, slides, carousel }: { open: boolean; index: number; slides: { src: string }[]; carousel: { preload: number } }) =>
+    open ? <div data-testid="lightbox" data-index={index} data-count={slides.length} data-src={slides[index]?.src} data-preload={carousel.preload} /> : null,
 }));
 
 describe('Galeria A15', () => {
@@ -15,12 +15,15 @@ describe('Galeria A15', () => {
     const sources = photos.map(button => button.querySelector('img')?.getAttribute('src'));
     expect(photos).toHaveLength(15);
     expect(new Set(sources).size).toBe(15);
-    expected.forEach((name, i) => expect(sources[i]).toContain(`${name}.jpg`));
+    expected.forEach((name, i) => expect(sources[i]).toContain(`${name}.webp`));
     expect(screen.getAllByRole('link', { name: /album/i })).toHaveLength(2);
     photos.forEach((button, i) => {
       fireEvent.click(button);
       expect(screen.getByTestId('lightbox')).toHaveAttribute('data-index', String(i));
       expect(screen.getByTestId('lightbox')).toHaveAttribute('data-count', '15');
+      expect(screen.getByTestId('lightbox')).toHaveAttribute('data-src', expect.stringContaining(`${expected[i]}.jpg`));
+      expect(screen.getByTestId('lightbox')).toHaveAttribute('data-preload', '0');
+      expect(button.querySelector('img')).toHaveAttribute('loading', 'lazy');
     });
   });
 
