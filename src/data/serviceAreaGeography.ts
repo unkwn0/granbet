@@ -225,9 +225,9 @@ export const towns: MapTown[] = [
   },
   {
     "name": "Zamość",
-    "lat": 50.83333,
-    "lon": 23.18333,
-    "id": "753865",
+    "lat": 50.7231,
+    "lon": 23.2519,
+    "id": "753866",
     "dx": -10,
     "dy": -10,
     "anchor": "end",
@@ -279,9 +279,9 @@ export const towns: MapTown[] = [
     "dx": 10,
     "dy": 5,
     "anchor": "start",
-    "major": true,
+    "major": false,
     "site": false,
-    "mobile": true
+    "mobile": false
   },
   {
     "name": "Komarów-Osada",

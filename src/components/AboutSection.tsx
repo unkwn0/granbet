@@ -1,10 +1,3 @@
-// Lista miejscowości — pod lokalne SEO (naturalnie, nie spam).
-const obszar = [
-  'Hrubieszów', 'Kryłów', 'Dołhobyczów', 'Mircze', 'Werbkowice', 'Horodło',
-  'Tyszowce', 'Łaszczów', 'Uchanie', 'Dubienka', 'Białopole', 'Trzeszczany',
-  'Moniatycze', 'Telatyn', 'Rachanie', 'Tomaszów Lubelski', 'Chełm', 'Zamość',
-];
-
 export default function AboutSection() {
   return (
     <section id="o-nas" className="bg-g-warm py-24 scroll-mt-20" aria-label="O firmie GRANBET">
@@ -23,22 +16,10 @@ export default function AboutSection() {
             <p className="font-inter text-base text-g-textDarkMuted leading-relaxed">
               Firmę prowadzi Henryk Sobczuk — z dbałością o jakość kamienia i dotrzymywanie terminów.
             </p>
+            <a href="#obszar-dzialania" className="inline-block mt-5 font-inter text-base text-g-goldText hover:text-g-goldTextHover">Sprawdź, gdzie montujemy →</a>
           </div>
         </div>
 
-        {/* Obszar działania — pod lokalne SEO */}
-        <div className="mt-16 max-w-4xl mx-auto text-center" data-animate="fade-in">
-          <h3 className="font-cormorant text-2xl text-g-goldText font-semibold">Obszar działania</h3>
-          <p className="font-inter text-base text-g-textDarkMuted mt-2 mb-5">
-            Wykonujemy nagrobki i realizujemy zamówienia w Hrubieszowie, Kryłowie, Dołhobyczowie oraz okolicznych miejscowościach:
-          </p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {obszar.map((m) => (
-              <span key={m} className="font-inter text-sm text-g-textDark bg-g-card border border-g-gold/30 rounded-full px-3 py-1">{m}</span>
-            ))}
-            <span className="font-inter text-sm text-g-textDarkMuted px-3 py-1">i inne</span>
-          </div>
-        </div>
       </div>
     </section>
   );

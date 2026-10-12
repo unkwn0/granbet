@@ -33,7 +33,7 @@ const checks = [
   'Nagrobki, grobowce i renowacje',
   'Indywidualne podejście do każdego zlecenia',
   'Terminowość i rzetelność',
-  'Obsługa Hrubieszów, Kryłów i Dołhobyczów',
+  'Transport i montaż w cenie nagrobka',
 ];
 
 function CountedValue({ end, suffix }: { end: number; suffix: string }) {

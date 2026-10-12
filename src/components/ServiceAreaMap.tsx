@@ -24,7 +24,7 @@ export default function ServiceAreaMap() {
           <text x="510" y="638" textAnchor="middle" className="service-map-country">UKRAINA</text>
           <g className="service-map-direction">
             <path d="M85 65 L40 30 M40 30 L43 46 M40 30 L56 32" fill="none" className="stroke-g-textDarkMuted" strokeWidth="2" />
-            <text x="92" y="71" className="service-map-label">do Lublina ↖</text>
+            <text x="92" y="71" className="service-map-label">do Lublina</text>
           </g>
           {towns.map((town) => {
             const [x, y] = project(town.lon, town.lat);
@@ -41,7 +41,7 @@ export default function ServiceAreaMap() {
       <figcaption className="font-inter text-sm text-g-textDarkMuted mt-3 leading-relaxed space-y-2">
         <p className="flex gap-2 items-start"><span aria-hidden="true" className="w-3 h-3 rounded-full bg-g-gold border border-g-textDark shrink-0 mt-1.5" />Zakład Kryłów · biuro Hrubieszów · ekspozycja Dołhobyczów</p>
         <p className="flex gap-2 items-start"><span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-g-textDark shrink-0 mt-2" />Przykładowe miejscowości — dojeżdżamy także poza pokazany obszar</p>
-        <p className="text-xs pt-2 border-t border-g-gold/30">Granica: linia przerywana · Bug: linia niebieska.<br />Dane mapy: <a href="https://www.naturalearthdata.com/about/terms-of-use/" className="underline underline-offset-2">Natural Earth</a> (domena publiczna), <a href="https://www.geonames.org/" className="underline underline-offset-2">GeoNames</a> (CC BY 4.0).</p>
+        <p className="text-xs pt-2 border-t border-g-gold/30">Dane mapy: <a href="https://www.naturalearthdata.com/about/terms-of-use/" className="underline underline-offset-2">Natural Earth</a> (domena publiczna), <a href="https://www.geonames.org/" className="underline underline-offset-2">GeoNames</a> (CC BY 4.0).</p>
       </figcaption>
       <p className="sr-only">Miejscowości na pełnej mapie: {towns.map(t => t.name).join(', ')}. Wszystkie pokazane miejscowości znajdują się w Polsce. Dojeżdżamy również poza pokazany obszar.</p>
     </figure>
