@@ -7,6 +7,7 @@ import WhyUsSection from '@/components/WhyUsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ProcessSection from '@/components/ProcessSection';
 import GallerySection from '@/components/GallerySection';
+import ServiceAreaSection from '@/components/ServiceAreaSection';
 import FaqSection from '@/components/FaqSection';
 import { faqs } from '@/data/faq';
 import ContactSection from '@/components/ContactSection';
@@ -66,6 +67,7 @@ export default function Index() {
         <TestimonialsSection />
         <ProcessSection />
         <GallerySection />
+        <ServiceAreaSection />
         <FaqSection />
         <ContactSection />
       </main>
