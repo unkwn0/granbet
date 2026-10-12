@@ -54,7 +54,7 @@ export default function OfferSection() {
           ))}
         </div>
 
-        <p className="font-inter text-center text-g-textDarkMuted leading-relaxed mt-10">Wykonujemy również tablice i pomniki pamiątkowe. Zakres prac ustalamy indywidualnie.</p>
+        <p className="font-inter text-center text-g-textDarkMuted leading-relaxed mt-10">Wykonujemy również <span className="text-g-textDark font-semibold">tablice</span> i <span className="text-g-textDark font-semibold">pomniki pamiątkowe</span>. Zakres prac ustalamy indywidualnie.</p>
 
         {/* Usługi dodatkowe — dyskretny pasek, celowo nie konkuruje z nagrobkami */}
         <p className="font-inter text-center text-g-textDarkMuted mt-3">
