@@ -1,0 +1,23 @@
+.service-map-label {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  fill: theme('colors.g.textDark');
+  stroke: theme('colors.g.card');
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+.service-map-major { font-size: 16px; font-weight: 600; }
+.service-map-country { font-family: Inter, sans-serif; font-size: 15px; letter-spacing: 0; fill: theme('colors.g.textDarkMuted'); }
+.service-map-border { fill: none; stroke: var(--map-boundary); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.service-map-river { fill: none; stroke: var(--map-river); stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+.service-map-mobile-label { display: none; }
+@media (max-width: 767px) {
+  .service-map-desktop-only, .service-map-desktop-label { display: none; }
+  .service-map-mobile-label { display: block; }
+  .service-map-label { font-size: 26px; stroke-width: 4px; }
+  .service-map-country { font-size: 22px; }
+  .service-map-site { r: 9px; }
+  .service-map-border { stroke-width: 2; }
+  .service-map-river { stroke-width: 3; }
+}
