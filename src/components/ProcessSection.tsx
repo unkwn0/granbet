@@ -22,7 +22,7 @@ export default function ProcessSection() {
                 data-animate="fade-in"
                 className="relative bg-g-card border-2 border-g-warmAlt rounded-xl p-7 flex-1 hover:border-g-gold hover:bg-g-warmAlt transition-all duration-200"
               >
-                <span className="font-playfair text-5xl text-g-gold/15 absolute top-2 right-4">{s.num}</span>
+                <span className="font-playfair text-5xl text-g-goldText absolute top-2 right-4">{s.num}</span>
                 <s.icon className="w-8 h-8 text-g-gold mb-3" />
                 <h3 className="font-playfair text-xl text-g-textDark font-bold">{s.title}</h3>
                 <p className="font-inter text-base text-g-textDarkMuted leading-relaxed mt-2">{s.desc}</p>

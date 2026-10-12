@@ -29,7 +29,7 @@ export default function FooterSection() {
         </div>
       </div>
       <div className="border-t border-white/10 mt-8 pt-6 pb-6 text-center">
-        <p className="font-inter text-sm text-g-textMuted/60">© {new Date().getFullYear()} GRANBET Zakład Kamieniarski Henryk Sobczuk. Wszelkie prawa zastrzeżone.</p>
+        <p className="font-inter text-sm text-g-textMuted">© {new Date().getFullYear()} GRANBET Zakład Kamieniarski Henryk Sobczuk. Wszelkie prawa zastrzeżone.</p>
       </div>
     </footer>
   );
