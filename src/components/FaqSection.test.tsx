@@ -30,4 +30,9 @@ it('connects heading buttons to stable panels and exposes only the open answer',
   expect(buttons[1]).toHaveAttribute('aria-expanded', 'false');
   expect(screen.getAllByRole('region')).toHaveLength(1);
   expect(buttons.map(button => button.getAttribute('aria-controls'))).toEqual(panelIds);
+  const transportQuestion = screen.getByRole('button', { name: 'Czy dojeżdżacie z montażem i czy jest dodatkowa opłata?' });
+  fireEvent.click(transportQuestion);
+  const transportPanel = screen.getByRole('region', { name: transportQuestion.textContent ?? '' });
+  expect(transportPanel).toHaveTextContent('Transport i montaż na fundamencie są w cenie nagrobka, bez dopłaty za odległość.');
+  expect(transportPanel).toHaveTextContent('Zadzwoń pod 502 480 543 i podaj miejscowość oraz cmentarz.');
 });

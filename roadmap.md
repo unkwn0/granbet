@@ -1,2 +1,3 @@
 - [x] Wdrożyć zatwierdzone podmiany tekstowe T1–T10 w 5 wskazanych plikach; bez publikacji, nowych funkcji i zależności.
 - [x] Dodać wyłącznie sekcję Obszar działania po galerii: mapa z danych, wariant mobilny, weryfikacja i raport; bez publikacji.
+- [ ] Ujednolicić wskazaną komunikację montażu, sprawdzić GeoNames, FAQ/JSON-LD i cztery szerokości; bez publikacji i zmian domeny.
