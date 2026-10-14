@@ -2,3 +2,4 @@
 - [x] Dodać wyłącznie sekcję Obszar działania po galerii: mapa z danych, wariant mobilny, weryfikacja i raport; bez publikacji.
 - [x] Ujednolicić wskazaną komunikację montażu, sprawdzić GeoNames, FAQ/JSON-LD i cztery szerokości; bez publikacji i zmian domeny.
 - [x] Zaktualizować sezonowe godziny biura w Hrubieszowie, dokumentację i testy; sprawdzić wyróżnienie i układ mobilny; bez publikacji.
+- [ ] Zaktualizować całoroczne godziny Kryłowa, JSON-LD, bieżącą dokumentację i testy; bez publikacji.
