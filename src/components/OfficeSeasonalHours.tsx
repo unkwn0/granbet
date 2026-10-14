@@ -34,7 +34,7 @@ export default function OfficeSeasonalHours() {
             <p>
               <span className="whitespace-nowrap">{period.weekdays}</span>
               {'note' in period && <> {period.note}</>}
-              {' '}<span className="whitespace-nowrap">· {period.saturday}</span>
+              {period.id === 'winter' ? <span className="whitespace-pre-line">{'\n'}{period.saturday}</span> : <> <span className="whitespace-nowrap">· {period.saturday}</span></>}
             </p>
           </div>
         ))}
