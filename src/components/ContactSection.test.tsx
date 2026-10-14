@@ -56,11 +56,11 @@ it('keeps both office schedules in a fixed order with the confirmed hours', () =
   expect(within(summer).getByText('Pon–Pt 8:00–17:00')).toBeVisible();
   expect(within(summer).getByText('· Sob 9:00–15:00')).toBeVisible();
   expect(within(winter).getByText('Pon–Pt 8:00–15:00')).toBeVisible();
-  expect(within(winter).getByText('Sob nieczynne')).toBeVisible();
+  expect(within(winter).getByText('· Sob nieczynne')).toBeVisible();
   expect(summer.querySelectorAll('p')).toHaveLength(2);
   expect(winter.querySelectorAll('p')).toHaveLength(2);
   expect(summer.querySelectorAll('p')[1]).toHaveTextContent('Pon–Pt 8:00–17:00 · Sob 9:00–15:00');
-  expect(winter.querySelectorAll('p')[1]).toHaveTextContent('Pon–Pt 8:00–15:00 (po uzgodnieniu tel.)\nSob nieczynne', { normalizeWhitespace: false });
+  expect(winter.querySelectorAll('p')[1]).toHaveTextContent('Pon–Pt 8:00–15:00 (po uzgodnieniu tel.) · Sob nieczynne');
   expect(screen.queryByText('W niedziele i święta nieczynne')).not.toBeInTheDocument();
   expect(screen.queryByText(/Sob 8:00–15:00/)).not.toBeInTheDocument();
   expect(screen.queryByText('Otwarte teraz')).not.toBeInTheDocument();
@@ -96,6 +96,6 @@ it('keeps both schedules visible if Warsaw formatting fails', () => {
   vi.spyOn(Intl, 'DateTimeFormat').mockImplementation(() => { throw new Error('Timezone unavailable'); });
   render(<OfficeSeasonalHours />);
   expect(screen.getByText('· Sob 9:00–15:00')).toBeVisible();
-  expect(screen.getByText('Sob nieczynne')).toBeVisible();
+  expect(screen.getByText('· Sob nieczynne')).toBeVisible();
   expect(screen.queryByText('Aktualny okres')).not.toBeInTheDocument();
 });
