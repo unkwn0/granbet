@@ -20,7 +20,8 @@ const lokalizacje = [
     tytul: 'Zakład produkcyjny — Kryłów',
     adres: 'ul. Hrubieszowska 33, Kryłów (gm. Mircze)',
     tel: { display: '502 480 543', href: 'tel:+48502480543' },
-    godziny: 'Pon–Pt 7:00–15:00, Sob 7:00–13:00',
+    godziny: 'Pon–Pt 7:00–15:00',
+    sobota: 'Sob 7:00–13:00',
     uwaga: 'Podczas rozmowy w zakładzie pokażemy Ci płyty granitowe dobrane do interesującej Cię kolorystyki i budżetu.',
     mapa: 'https://maps.google.com/?q=Krylow+ul.+Hrubieszowska+33+gmina+Mircze',
   },
@@ -141,7 +142,7 @@ export default function ContactSection() {
                 <div className="space-y-1 font-inter text-base text-g-textDark">
                   <p className="flex items-start gap-2"><MapPin className="w-5 h-5 text-g-goldText flex-shrink-0 mt-0.5" />{l.adres}</p>
                   <p className="flex items-center gap-2"><Phone className="w-5 h-5 text-g-goldText flex-shrink-0" /><a href={l.tel.href} className="inline-flex items-center min-h-[44px] whitespace-nowrap font-bold text-g-goldText hover:text-g-goldTextHover transition-colors">{l.tel.display}</a></p>
-                  {l.godziny && <p className="flex items-center gap-2"><Clock className="w-5 h-5 text-g-goldText flex-shrink-0" />{l.godziny}</p>}
+                  {l.godziny && <p className="flex items-center gap-2"><Clock className="w-5 h-5 text-g-goldText flex-shrink-0" /><span><span className="whitespace-nowrap">{l.godziny}</span>{' '}<span className="whitespace-nowrap">· {l.sobota}</span></span></p>}
                   {l.godzinySezonowe && (
                     <div className="flex items-start gap-2">
                       <Clock className="w-5 h-5 text-g-goldText shrink-0 mt-2" aria-hidden="true" />

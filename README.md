@@ -705,7 +705,7 @@ Układ: lg:grid-cols-2 gap-12.
 Blok 1 — H3: „Zakład produkcyjny" (Cormorant 20px text-g-gold font-semibold)
 MapPin + „ul. Hrubieszowska 33, Kryłów (gm. Mircze)"
 Phone +  „502 480 543" (font-bold text-g-gold)
-Clock + „Pon–Pt 7:00–15:00, Sob 7:00–13:00" — cały rok, bez podziału na sezony, tylko jedna linia godzin.
+Clock + „Pon–Pt 7:00–15:00 · Sob 7:00–13:00" — cały rok, bez podziału na sezony, tylko jedna linia godzin (separator „·", zawijanie przy „·" na telefonie).
 
 Blok 2 — H3: „Biuro handlowe — Hrubieszów" (Cormorant 20px text-g-gold)
 MapPin + „ul. Nowa 10, Hrubieszów"
@@ -800,7 +800,7 @@ H4: „Kontakt" — Cormorant text-g-gold font-semibold mb-3.
  „☎ 502 480 543" text-g-textLight hover:text-g-gold
  „☎ 697 994 924" text-g-textLight
 @vp.pl"> „granbet@vp.pl" text-g-textLight hover:text-g-gold
-„Pon–Pt 7:00–15:00, Sob 7:00–13:00" text-g-textMuted text-sm.
+„Pon–Pt 7:00–15:00 · Sob 7:00–13:00" text-g-textMuted text-sm.
 
 Dolna belka (border-t border-white/10 mt-8 pt-6 text-center):
 „© {new Date().getFullYear()} GRANBET Zakład Kamieniarski.
