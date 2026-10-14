@@ -60,7 +60,7 @@ it('keeps both office schedules in a fixed order with the confirmed hours', () =
   expect(summer.querySelectorAll('p')).toHaveLength(2);
   expect(winter.querySelectorAll('p')).toHaveLength(2);
   expect(summer.querySelectorAll('p')[1]).toHaveTextContent('Pon–Pt 8:00–17:00 · Sob 9:00–15:00');
-  expect(winter.querySelectorAll('p')[1]).toHaveTextContent('Pon–Pt 8:00–15:00 (po uzgodnieniu tel.)\nSob nieczynne');
+  expect(winter.querySelectorAll('p')[1]).toHaveTextContent('Pon–Pt 8:00–15:00 (po uzgodnieniu tel.)\nSob nieczynne', { normalizeWhitespace: false });
   expect(screen.queryByText('W niedziele i święta nieczynne')).not.toBeInTheDocument();
   expect(screen.queryByText(/Sob 8:00–15:00/)).not.toBeInTheDocument();
   expect(screen.queryByText('Otwarte teraz')).not.toBeInTheDocument();
