@@ -20,7 +20,7 @@ const lokalizacje = [
     tytul: 'Zakład produkcyjny — Kryłów',
     adres: 'ul. Hrubieszowska 33, Kryłów (gm. Mircze)',
     tel: { display: '502 480 543', href: 'tel:+48502480543' },
-    godziny: 'Pon–Pt 7:00–17:00, Sob 7:00–15:00',
+    godziny: 'Pon–Pt 7:00–15:00, Sob 7:00–13:00',
     uwaga: 'Podczas rozmowy w zakładzie pokażemy Ci płyty granitowe dobrane do interesującej Cię kolorystyki i budżetu.',
     mapa: 'https://maps.google.com/?q=Krylow+ul.+Hrubieszowska+33+gmina+Mircze',
   },
