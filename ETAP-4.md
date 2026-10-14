@@ -41,7 +41,7 @@ Nie wykonano automatycznie przejścia na React Router 7: jest to aktualizacja g�
 - Czysta instalacja Bunem z nowego `bun.lock`: powodzenie, deterministyczna.
 - Testy: 6/6 (4 pliki).
 - Build produkcyjny: poprawny. JS gzip 134,59 kB, CSS gzip 13,41 kB.
-- Kontrola przeglądarki 1440 px i 390 px: nawigacja desktop (6 pozycji), hamburger otwiera modal i zamyka się Escapem, 13 przycisków telefonicznych, godziny 7:00–17:00 i 8:00–17:00 obecne, wygląd bez zmian.
+- Kontrola przeglądarki 1440 px i 390 px (stan z Etapu 4): nawigacja desktop (6 pozycji), hamburger otwiera modal i zamyka się Escapem, 13 przycisków telefonicznych, godziny Kryłowa 7:00–17:00 obecne, wygląd bez zmian. Aktualny harmonogram biura Hrubieszów: kwiecień–październik Pon–Pt 8:00–17:00, Sob 9:00–15:00; listopad–marzec Pon–Pt 8:00–15:00 po wcześniejszym uzgodnieniu telefonicznym, Sob nieczynne; w niedziele i święta nieczynne.
 - Konsola: wyłącznie wcześniej istniejące ostrzeżenia React o `refs` w komponentach funkcyjnych (pochodzą z `react-helmet-async` i występowały przed tym etapem). Brak błędów wykonania.
 - Regresje Etapów 1–3: brak.
 - Utrzymuje się znany komunikat o starej bazie Browserslist/caniuse-lite — poza zakresem etapu.
