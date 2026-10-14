@@ -705,7 +705,7 @@ Układ: lg:grid-cols-2 gap-12.
 Blok 1 — H3: „Zakład produkcyjny" (Cormorant 20px text-g-gold font-semibold)
 MapPin + „ul. Hrubieszowska 33, Kryłów (gm. Mircze)"
 Phone +  „502 480 543" (font-bold text-g-gold)
-Clock + „Pon–Pt 7:00–15:00, Sob 7:00–13:00" — cały rok, bez podziału na sezony.
+Clock + „Pon–Pt 7:00–15:00, Sob 7:00–13:00" — cały rok, bez podziału na sezony; pod nią osobna linia „W niedziele i święta nieczynne" (wyrównana z tekstem godzin, bez drugiej ikony zegara).
 
 Blok 2 — H3: „Biuro handlowe — Hrubieszów" (Cormorant 20px text-g-gold)
 MapPin + „ul. Nowa 10, Hrubieszów"

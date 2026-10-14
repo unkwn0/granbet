@@ -27,6 +27,7 @@ it('presents labelled phone actions before all three locations and preserves con
   expect(within(locations).getAllByRole('link', { name: 'Zobacz na mapie →' })).toHaveLength(3);
   expect(within(contact).getAllByRole('link', { name: 'granbet@vp.pl' })).toHaveLength(1);
   expect(screen.getByText('Pon–Pt 7:00–15:00, Sob 7:00–13:00')).toBeVisible();
+  expect(screen.getAllByText('W niedziele i święta nieczynne')).toHaveLength(2);
   expect(screen.queryByText(/7:00–17:00/)).not.toBeInTheDocument();
   expect(screen.queryByText(/Sob 7:00–15:00/)).not.toBeInTheDocument();
   expect(screen.getAllByText(/8:00–17:00/)).toHaveLength(1);
@@ -55,7 +56,7 @@ it('keeps both office schedules in a fixed order with the confirmed hours', () =
   expect(within(summer).getByText('Sob 9:00–15:00')).toBeVisible();
   expect(within(winter).getByText('Pon–Pt 8:00–15:00, po wcześniejszym uzgodnieniu telefonicznym')).toBeVisible();
   expect(within(winter).getByText('Sob nieczynne')).toBeVisible();
-  expect(screen.getAllByText('W niedziele i święta nieczynne')).toHaveLength(1);
+  expect(screen.getAllByText('W niedziele i święta nieczynne')).toHaveLength(2);
   expect(screen.queryByText(/Sob 8:00–15:00/)).not.toBeInTheDocument();
   expect(screen.queryByText('Otwarte teraz')).not.toBeInTheDocument();
 });
