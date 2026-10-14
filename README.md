@@ -710,6 +710,10 @@ Clock + „Pon–Pt 7:00–17:00, Sob 7:00–15:00"
 Blok 2 — H3: „Biuro handlowe — Hrubieszów" (Cormorant 20px text-g-gold)
 MapPin + „ul. Nowa 10, Hrubieszów"
 Phone +  „697 994 924"
+Clock + dwa zwarte okresy, zawsze w tej kolejności:
+- Kwiecień – październik: Pon–Pt 8:00–17:00; Sob 9:00–15:00.
+- Listopad – marzec: Pon–Pt 8:00–15:00, po wcześniejszym uzgodnieniu telefonicznym; Sob nieczynne.
+Pod obiema sekcjami: „W niedziele i święta nieczynne”. Oba okresy czytelne; aktualny ma delikatne tło i dopisek „Aktualny okres”, obliczany przy wyświetleniu według miesiąca w Europe/Warsaw. Bez powtórzenia telefonu i bez „Otwarte teraz”.
 
 Blok 3 — H3: „Punkt obsługi — Dołhobyczów" (Cormorant 20px text-g-gold)
 MapPin + „ul. Spółdzielcza, Dołhobyczów"

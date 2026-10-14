@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MapPin, Phone, Clock, Mail, CheckCircle, AlertCircle } from 'lucide-react';
 import DaneDoPrzelewu from './DaneDoPrzelewu';
+import OfficeSeasonalHours from './OfficeSeasonalHours';
 
 // ─── FORMULARZ → e-mail ───────────────────────────────────────────────
 // Formularz jest WYŁĄCZONY, dopóki klucz jest pusty. Bez klucza prawa kolumna
@@ -27,7 +28,8 @@ const lokalizacje = [
     tytul: 'Biuro handlowe — Hrubieszów',
     adres: 'ul. Nowa 10, Hrubieszów',
     tel: { display: '697 994 924', href: 'tel:+48697994924' },
-    godziny: 'Pon–Pt 8:00–17:00, Sob 8:00–15:00',
+    godziny: '',
+    godzinySezonowe: true,
     uwaga: 'W biurze omówisz szczegóły, uzyskasz wycenę i złożysz zamówienie.',
     mapa: 'https://maps.google.com/?q=Hrubieszow+ul.+Nowa+10',
   },
@@ -140,6 +142,12 @@ export default function ContactSection() {
                   <p className="flex items-start gap-2"><MapPin className="w-5 h-5 text-g-goldText flex-shrink-0 mt-0.5" />{l.adres}</p>
                   <p className="flex items-center gap-2"><Phone className="w-5 h-5 text-g-goldText flex-shrink-0" /><a href={l.tel.href} className="inline-flex items-center min-h-[44px] whitespace-nowrap font-bold text-g-goldText hover:text-g-goldTextHover transition-colors">{l.tel.display}</a></p>
                   {l.godziny && <p className="flex items-center gap-2"><Clock className="w-5 h-5 text-g-goldText flex-shrink-0" />{l.godziny}</p>}
+                  {l.godzinySezonowe && (
+                    <div className="flex items-start gap-2">
+                      <Clock className="w-5 h-5 text-g-goldText shrink-0 mt-2" aria-hidden="true" />
+                      <OfficeSeasonalHours />
+                    </div>
+                  )}
                   {l.uwaga && <p className="text-sm text-g-textDarkMuted ml-7">{l.uwaga}</p>}
                   <a href={l.mapa} target="_blank" rel="noopener noreferrer" className="inline-flex items-center min-h-[44px] gap-1 text-sm text-g-goldText underline underline-offset-2 hover:text-g-goldTextHover transition-colors ml-7">Zobacz na mapie →</a>
                 </div>
