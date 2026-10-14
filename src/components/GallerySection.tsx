@@ -2,57 +2,57 @@ import { useEffect, useRef, useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { Phone } from 'lucide-react';
-import albumImage from '@/assets/album/7_a.webp.asset.json';
 import { Button } from '@/components/ui/button';
-import photo01 from '@/assets/realizacje/a15/01-kn079-sg124.jpg.asset.json';
-import photo02 from '@/assets/realizacje/a15/02-kn024-sg117.jpg.asset.json';
-import photo03 from '@/assets/realizacje/a15/03-kn019-sg009.jpg.asset.json';
-import photo04 from '@/assets/realizacje/a15/04-kn088-sg130.jpg.asset.json';
-import photo05 from '@/assets/realizacje/a15/05-kn017-sg116.jpg.asset.json';
-import photo06 from '@/assets/realizacje/a15/06-kn084-sg127.jpg.asset.json';
-import photo07 from '@/assets/realizacje/a15/07-kn060-sg113.jpg.asset.json';
-import photo08 from '@/assets/realizacje/a15/08-kn056.jpg.asset.json';
-import photo09 from '@/assets/realizacje/a15/09-kn077-sg122.jpg.asset.json';
-import photo10 from '@/assets/realizacje/a15/10-kn103-sg148.jpg.asset.json';
-import photo11 from '@/assets/realizacje/a15/11-kn085-sg128.jpg.asset.json';
-import photo12 from '@/assets/realizacje/a15/12-kn076-sg089.jpg.asset.json';
-import photo13 from '@/assets/realizacje/a15/13-kn023-sg135.jpg.asset.json';
-import photo14 from '@/assets/realizacje/a15/14-kn042-sg138.jpg.asset.json';
-import photo15 from '@/assets/realizacje/a15/15-kn069-sg103.jpg.asset.json';
+const albumImage = '/album/7_a.webp';
+const photo01 = '/realizacje/a15/01-kn079-sg124.jpg';
+const photo02 = '/realizacje/a15/02-kn024-sg117.jpg';
+const photo03 = '/realizacje/a15/03-kn019-sg009.jpg';
+const photo04 = '/realizacje/a15/04-kn088-sg130.jpg';
+const photo05 = '/realizacje/a15/05-kn017-sg116.jpg';
+const photo06 = '/realizacje/a15/06-kn084-sg127.jpg';
+const photo07 = '/realizacje/a15/07-kn060-sg113.jpg';
+const photo08 = '/realizacje/a15/08-kn056.jpg';
+const photo09 = '/realizacje/a15/09-kn077-sg122.jpg';
+const photo10 = '/realizacje/a15/10-kn103-sg148.jpg';
+const photo11 = '/realizacje/a15/11-kn085-sg128.jpg';
+const photo12 = '/realizacje/a15/12-kn076-sg089.jpg';
+const photo13 = '/realizacje/a15/13-kn023-sg135.jpg';
+const photo14 = '/realizacje/a15/14-kn042-sg138.jpg';
+const photo15 = '/realizacje/a15/15-kn069-sg103.jpg';
 
-import thumbnail01 from '@/assets/realizacje/a15/thumbs/01-kn079-sg124.webp.asset.json';
-import thumbnail02 from '@/assets/realizacje/a15/thumbs/02-kn024-sg117.webp.asset.json';
-import thumbnail03 from '@/assets/realizacje/a15/thumbs/03-kn019-sg009.webp.asset.json';
-import thumbnail04 from '@/assets/realizacje/a15/thumbs/04-kn088-sg130.webp.asset.json';
-import thumbnail05 from '@/assets/realizacje/a15/thumbs/05-kn017-sg116.webp.asset.json';
-import thumbnail06 from '@/assets/realizacje/a15/thumbs/06-kn084-sg127.webp.asset.json';
-import thumbnail07 from '@/assets/realizacje/a15/thumbs/07-kn060-sg113.webp.asset.json';
-import thumbnail08 from '@/assets/realizacje/a15/thumbs/08-kn056.webp.asset.json';
-import thumbnail09 from '@/assets/realizacje/a15/thumbs/09-kn077-sg122.webp.asset.json';
-import thumbnail10 from '@/assets/realizacje/a15/thumbs/10-kn103-sg148.webp.asset.json';
-import thumbnail11 from '@/assets/realizacje/a15/thumbs/11-kn085-sg128.webp.asset.json';
-import thumbnail12 from '@/assets/realizacje/a15/thumbs/12-kn076-sg089.webp.asset.json';
-import thumbnail13 from '@/assets/realizacje/a15/thumbs/13-kn023-sg135.webp.asset.json';
-import thumbnail14 from '@/assets/realizacje/a15/thumbs/14-kn042-sg138.webp.asset.json';
-import thumbnail15 from '@/assets/realizacje/a15/thumbs/15-kn069-sg103.webp.asset.json';
+const thumbnail01 = '/realizacje/a15/thumbs/01-kn079-sg124.webp';
+const thumbnail02 = '/realizacje/a15/thumbs/02-kn024-sg117.webp';
+const thumbnail03 = '/realizacje/a15/thumbs/03-kn019-sg009.webp';
+const thumbnail04 = '/realizacje/a15/thumbs/04-kn088-sg130.webp';
+const thumbnail05 = '/realizacje/a15/thumbs/05-kn017-sg116.webp';
+const thumbnail06 = '/realizacje/a15/thumbs/06-kn084-sg127.webp';
+const thumbnail07 = '/realizacje/a15/thumbs/07-kn060-sg113.webp';
+const thumbnail08 = '/realizacje/a15/thumbs/08-kn056.webp';
+const thumbnail09 = '/realizacje/a15/thumbs/09-kn077-sg122.webp';
+const thumbnail10 = '/realizacje/a15/thumbs/10-kn103-sg148.webp';
+const thumbnail11 = '/realizacje/a15/thumbs/11-kn085-sg128.webp';
+const thumbnail12 = '/realizacje/a15/thumbs/12-kn076-sg089.webp';
+const thumbnail13 = '/realizacje/a15/thumbs/13-kn023-sg135.webp';
+const thumbnail14 = '/realizacje/a15/thumbs/14-kn042-sg138.webp';
+const thumbnail15 = '/realizacje/a15/thumbs/15-kn069-sg103.webp';
 
 // Jawna kolejność A15 — niezależna od nazw plików i sortowania.
 const realizacje = [
-  { src: photo01.url, thumbnail: thumbnail01.url, alt: 'Ciemna płyta z odbiciami i pionowa tablica z krzyżem' },
-  { src: photo02.url, thumbnail: thumbnail02.url, alt: 'Kompozycja płyt i tablic na wspólnej stopniowanej podstawie' },
-  { src: photo03.url, thumbnail: thumbnail03.url, alt: 'Płyta z falistym dodatkiem i zaokrąglona tablica z owalnym portretem' },
-  { src: photo04.url, thumbnail: thumbnail04.url, alt: 'Jasna płyta i profilowana tablica z figurą' },
-  { src: photo05.url, thumbnail: thumbnail05.url, alt: 'Jasna płyta z łukowym frontem i brązowa tablica' },
-  { src: photo06.url, thumbnail: thumbnail06.url, alt: 'Jasna płyta o wyrazistym wzorze i ciemna tablica z krzyżem' },
-  { src: photo07.url, thumbnail: thumbnail07.url, alt: 'Ciemna płyta z brązowymi bokami i tablica z jasnym krzyżem' },
-  { src: photo08.url, thumbnail: thumbnail08.url, alt: 'Jasna płyta z brązowym falistym pasem i ciemna tablica z krucyfiksem' },
-  { src: photo09.url, thumbnail: thumbnail09.url, alt: 'Jasna prostokątna płyta i ciemna tablica z krzyżem' },
-  { src: photo10.url, thumbnail: thumbnail10.url, alt: 'Rozległa kompozycja płyt na podstawie otoczonej słupkami i łańcuchami' },
-  { src: photo11.url, thumbnail: thumbnail11.url, alt: 'Szeroka jasna płyta i ciemna tablica z krzyżem' },
-  { src: photo12.url, thumbnail: thumbnail12.url, alt: 'Jasna płyta z brązową falą i brązowa tablica ze złocistym krucyfiksem' },
-  { src: photo13.url, thumbnail: thumbnail13.url, alt: 'Jasna płyta z zaokrąglonym frontem i ciemna tablica z wysokim krzyżem' },
-  { src: photo14.url, thumbnail: thumbnail14.url, alt: 'Jasna płyta na stopniowanej podstawie z krzyżem i wazonem' },
-  { src: photo15.url, thumbnail: thumbnail15.url, alt: 'Ciemna płyta z poziomym krzyżem i tablicą w kształcie otwartej księgi' },
+  { src: photo01, thumbnail: thumbnail01, alt: 'Ciemna płyta z odbiciami i pionowa tablica z krzyżem' },
+  { src: photo02, thumbnail: thumbnail02, alt: 'Kompozycja płyt i tablic na wspólnej stopniowanej podstawie' },
+  { src: photo03, thumbnail: thumbnail03, alt: 'Płyta z falistym dodatkiem i zaokrąglona tablica z owalnym portretem' },
+  { src: photo04, thumbnail: thumbnail04, alt: 'Jasna płyta i profilowana tablica z figurą' },
+  { src: photo05, thumbnail: thumbnail05, alt: 'Jasna płyta z łukowym frontem i brązowa tablica' },
+  { src: photo06, thumbnail: thumbnail06, alt: 'Jasna płyta o wyrazistym wzorze i ciemna tablica z krzyżem' },
+  { src: photo07, thumbnail: thumbnail07, alt: 'Ciemna płyta z brązowymi bokami i tablica z jasnym krzyżem' },
+  { src: photo08, thumbnail: thumbnail08, alt: 'Jasna płyta z brązowym falistym pasem i ciemna tablica z krucyfiksem' },
+  { src: photo09, thumbnail: thumbnail09, alt: 'Jasna prostokątna płyta i ciemna tablica z krzyżem' },
+  { src: photo10, thumbnail: thumbnail10, alt: 'Rozległa kompozycja płyt na podstawie otoczonej słupkami i łańcuchami' },
+  { src: photo11, thumbnail: thumbnail11, alt: 'Szeroka jasna płyta i ciemna tablica z krzyżem' },
+  { src: photo12, thumbnail: thumbnail12, alt: 'Jasna płyta z brązową falą i brązowa tablica ze złocistym krucyfiksem' },
+  { src: photo13, thumbnail: thumbnail13, alt: 'Jasna płyta z zaokrąglonym frontem i ciemna tablica z wysokim krzyżem' },
+  { src: photo14, thumbnail: thumbnail14, alt: 'Jasna płyta na stopniowanej podstawie z krzyżem i wazonem' },
+  { src: photo15, thumbnail: thumbnail15, alt: 'Ciemna płyta z poziomym krzyżem i tablicą w kształcie otwartej księgi' },
 ];
 
 export default function GallerySection() {
@@ -128,7 +128,7 @@ export default function GallerySection() {
               aria-describedby="galeria-album-opis"
               className={`relative aspect-[4/3] rounded-lg overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-g-gold focus-visible:ring-offset-2 focus-visible:ring-offset-g-darkDeep ${!expanded ? 'hidden md:block' : ''} lg:col-span-3 lg:aspect-auto lg:h-48`}
             >
-              <img src={albumImage.url} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={albumImage} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-g-darkDeep/70" />
               <div className="absolute inset-3 border border-g-gold pointer-events-none" />
               <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
