@@ -26,7 +26,7 @@ it('presents labelled phone actions before all three locations and preserves con
   expect(within(locations).getAllByRole('heading', { level: 3 })).toHaveLength(3);
   expect(within(locations).getAllByRole('link', { name: 'Zobacz na mapie →' })).toHaveLength(3);
   expect(within(contact).getAllByRole('link', { name: 'granbet@vp.pl' })).toHaveLength(1);
-  expect(screen.getByText('Pon–Pt 7:00–15:00, Sob 7:00–13:00')).toBeVisible();
+  expect(screen.getByText('Pon–Pt 7:00–15:00 · Sob 7:00–13:00')).toBeVisible();
   expect(screen.queryByText('W niedziele i święta nieczynne')).not.toBeInTheDocument();
   expect(screen.queryByText(/7:00–17:00/)).not.toBeInTheDocument();
   expect(screen.queryByText(/Sob 7:00–15:00/)).not.toBeInTheDocument();
