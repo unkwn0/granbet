@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server';
 import ContactSection from './ContactSection';
 import FooterSection from './FooterSection';
 import OfficeSeasonalHours from './OfficeSeasonalHours';
+import { readFileSync } from 'node:fs';
 
 afterEach(() => {
   cleanup();
@@ -25,10 +26,24 @@ it('presents labelled phone actions before all three locations and preserves con
   expect(within(locations).getAllByRole('heading', { level: 3 })).toHaveLength(3);
   expect(within(locations).getAllByRole('link', { name: 'Zobacz na mapie →' })).toHaveLength(3);
   expect(within(contact).getAllByRole('link', { name: 'granbet@vp.pl' })).toHaveLength(1);
-  expect(screen.getAllByText(/7:00–17:00/)).toHaveLength(1);
+  expect(screen.getByText('Pon–Pt 7:00–15:00, Sob 7:00–13:00')).toBeVisible();
+  expect(screen.queryByText(/7:00–17:00/)).not.toBeInTheDocument();
+  expect(screen.queryByText(/Sob 7:00–15:00/)).not.toBeInTheDocument();
   expect(screen.getAllByText(/8:00–17:00/)).toHaveLength(1);
   expect(screen.getByRole('link', { name: 'Godziny i dojazd' })).toHaveAttribute('href', '#lokalizacje');
   expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+});
+
+it('declares the confirmed year-round Kryłów hours in LocalBusiness JSON-LD', () => {
+  const source = readFileSync('src/pages/Index.tsx', 'utf8');
+  const schemaText = source.match(/const localBusinessSchema = (\{[\s\S]*?\n\});/)?.[1];
+  if (!schemaText) throw new Error('Missing LocalBusiness schema');
+  const schema = JSON.parse(schemaText);
+  expect(schema.address.addressLocality).toBe('Kryłów');
+  expect(schema.openingHoursSpecification).toEqual([
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '07:00', closes: '15:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '07:00', closes: '13:00' },
+  ]);
 });
 
 it('keeps both office schedules in a fixed order with the confirmed hours', () => {
