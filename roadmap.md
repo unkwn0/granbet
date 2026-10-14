@@ -3,3 +3,4 @@
 - [x] Ujednolicić wskazaną komunikację montażu, sprawdzić GeoNames, FAQ/JSON-LD i cztery szerokości; bez publikacji i zmian domeny.
 - [x] Zaktualizować sezonowe godziny biura w Hrubieszowie, dokumentację i testy; sprawdzić wyróżnienie i układ mobilny; bez publikacji.
 - [x] Zaktualizować całoroczne godziny Kryłowa, JSON-LD, bieżącą dokumentację i testy; bez publikacji.
+- [ ] Uprościć godziny kontaktu w obu kartach, uaktualnić testy, dokumentację i pamięć; sprawdzić układ, bez zmian JSON-LD i publikacji.

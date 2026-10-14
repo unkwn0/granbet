@@ -705,15 +705,15 @@ Układ: lg:grid-cols-2 gap-12.
 Blok 1 — H3: „Zakład produkcyjny" (Cormorant 20px text-g-gold font-semibold)
 MapPin + „ul. Hrubieszowska 33, Kryłów (gm. Mircze)"
 Phone +  „502 480 543" (font-bold text-g-gold)
-Clock + „Pon–Pt 7:00–15:00, Sob 7:00–13:00" — cały rok, bez podziału na sezony; pod nią osobna linia „W niedziele i święta nieczynne" (wyrównana z tekstem godzin, bez drugiej ikony zegara).
+Clock + „Pon–Pt 7:00–15:00, Sob 7:00–13:00" — cały rok, bez podziału na sezony, tylko jedna linia godzin.
 
 Blok 2 — H3: „Biuro handlowe — Hrubieszów" (Cormorant 20px text-g-gold)
 MapPin + „ul. Nowa 10, Hrubieszów"
 Phone +  „697 994 924"
 Clock + dwa zwarte okresy, zawsze w tej kolejności:
-- Kwiecień – październik: Pon–Pt 8:00–17:00; Sob 9:00–15:00.
-- Listopad – marzec: Pon–Pt 8:00–15:00, po wcześniejszym uzgodnieniu telefonicznym; Sob nieczynne.
-Pod obiema sekcjami: „W niedziele i święta nieczynne”. Oba okresy czytelne; aktualny ma delikatne tło i dopisek „Aktualny okres”, obliczany przy wyświetleniu według miesiąca w Europe/Warsaw. Bez powtórzenia telefonu i bez „Otwarte teraz”.
+- Kwiecień – październik: Pon–Pt 8:00–17:00 · Sob 9:00–15:00.
+- Listopad – marzec: Pon–Pt 8:00–15:00 (po uzgodnieniu tel.) · Sob nieczynne.
+Każdy okres: nazwa i jedna linia godzin, która na telefonie może zawijać się bez rozrywania zakresów czasu. Oba okresy czytelne; aktualny ma delikatne tło i małą plakietkę „Aktualny okres” obok nazwy, oddzieloną normalną spacją w treści, obliczaną przy wyświetleniu według miesiąca w Europe/Warsaw (początkowo bez wyróżnienia). Zwarte odstępy między okresami. Bez powtórzenia telefonu i bez „Otwarte teraz”. Informacji o niedzielach i świętach nie pokazujemy w żadnej karcie — właściciel uznał ją za oczywistą i przeładowującą; JSON-LD bez zmian.
 
 Blok 3 — H3: „Punkt obsługi — Dołhobyczów" (Cormorant 20px text-g-gold)
 MapPin + „ul. Spółdzielcza, Dołhobyczów"

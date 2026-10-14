@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const periods = [
   { id: 'summer', name: 'Kwiecień – październik', weekdays: 'Pon–Pt 8:00–17:00', saturday: 'Sob 9:00–15:00' },
-  { id: 'winter', name: 'Listopad – marzec', weekdays: 'Pon–Pt 8:00–15:00, po wcześniejszym uzgodnieniu telefonicznym', saturday: 'Sob nieczynne' },
+  { id: 'winter', name: 'Listopad – marzec', weekdays: 'Pon–Pt 8:00–15:00', note: '(po uzgodnieniu tel.)', saturday: 'Sob nieczynne' },
 ] as const;
 
 export default function OfficeSeasonalHours() {
@@ -23,20 +23,22 @@ export default function OfficeSeasonalHours() {
 
   return (
     <div className="min-w-0 text-g-textDark">
-      <div className="space-y-2">
+      <div className="space-y-1">
         {periods.map((period) => (
           <div key={period.id} role="group" aria-label={period.name}
             className={`px-2 py-1 rounded-sm ${currentPeriod === period.id ? 'bg-g-gold/10' : ''}`}>
             <p className="flex flex-wrap items-baseline gap-x-2 font-semibold">
               <span>{period.name}</span>
-              {currentPeriod === period.id && <span className="text-xs font-medium">Aktualny okres</span>}
+              {currentPeriod === period.id && <>{' '}<span className="text-xs font-medium border border-g-goldSoft rounded-sm px-1.5 leading-5">Aktualny okres</span></>}
             </p>
-            <p>{period.weekdays}</p>
-            <p>{period.saturday}</p>
+            <p>
+              <span className="whitespace-nowrap">{period.weekdays}</span>
+              {'note' in period && <> {period.note}</>}
+              {' '}<span className="whitespace-nowrap">· {period.saturday}</span>
+            </p>
           </div>
         ))}
       </div>
-      <p className="px-2 mt-2">W niedziele i święta nieczynne</p>
     </div>
   );
 }
