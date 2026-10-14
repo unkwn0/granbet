@@ -26,7 +26,8 @@ it('presents labelled phone actions before all three locations and preserves con
   expect(within(locations).getAllByRole('heading', { level: 3 })).toHaveLength(3);
   expect(within(locations).getAllByRole('link', { name: 'Zobacz na mapie →' })).toHaveLength(3);
   expect(within(contact).getAllByRole('link', { name: 'granbet@vp.pl' })).toHaveLength(1);
-  expect(screen.getByText('Pon–Pt 7:00–15:00 · Sob 7:00–13:00')).toBeVisible();
+  expect(screen.getByText('Pon–Pt 7:00–15:00')).toBeVisible();
+  expect(screen.getByText('· Sob 7:00–13:00')).toBeVisible();
   expect(screen.queryByText('W niedziele i święta nieczynne')).not.toBeInTheDocument();
   expect(screen.queryByText(/7:00–17:00/)).not.toBeInTheDocument();
   expect(screen.queryByText(/Sob 7:00–15:00/)).not.toBeInTheDocument();
@@ -55,11 +56,11 @@ it('keeps both office schedules in a fixed order with the confirmed hours', () =
   expect(within(summer).getByText('Pon–Pt 8:00–17:00')).toBeVisible();
   expect(within(summer).getByText('· Sob 9:00–15:00')).toBeVisible();
   expect(within(winter).getByText('Pon–Pt 8:00–15:00')).toBeVisible();
-  expect(within(winter).getByText('· Sob nieczynne')).toBeVisible();
+  expect(within(winter).getByText('Sob nieczynne')).toBeVisible();
   expect(summer.querySelectorAll('p')).toHaveLength(2);
   expect(winter.querySelectorAll('p')).toHaveLength(2);
   expect(summer.querySelectorAll('p')[1]).toHaveTextContent('Pon–Pt 8:00–17:00 · Sob 9:00–15:00');
-  expect(winter.querySelectorAll('p')[1]).toHaveTextContent('Pon–Pt 8:00–15:00 (po uzgodnieniu tel.) · Sob nieczynne');
+  expect(winter.querySelectorAll('p')[1]).toHaveTextContent('Pon–Pt 8:00–15:00 (po uzgodnieniu tel.)\nSob nieczynne');
   expect(screen.queryByText('W niedziele i święta nieczynne')).not.toBeInTheDocument();
   expect(screen.queryByText(/Sob 8:00–15:00/)).not.toBeInTheDocument();
   expect(screen.queryByText('Otwarte teraz')).not.toBeInTheDocument();
@@ -95,6 +96,6 @@ it('keeps both schedules visible if Warsaw formatting fails', () => {
   vi.spyOn(Intl, 'DateTimeFormat').mockImplementation(() => { throw new Error('Timezone unavailable'); });
   render(<OfficeSeasonalHours />);
   expect(screen.getByText('· Sob 9:00–15:00')).toBeVisible();
-  expect(screen.getByText('· Sob nieczynne')).toBeVisible();
+  expect(screen.getByText('Sob nieczynne')).toBeVisible();
   expect(screen.queryByText('Aktualny okres')).not.toBeInTheDocument();
 });
