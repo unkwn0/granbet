@@ -23,7 +23,7 @@ const lokalizacje = [
     godziny: 'Pon–Pt 7:00–15:00',
     sobota: 'Sob 7:00–13:00',
     uwaga: 'Podczas rozmowy w zakładzie pokażemy Ci płyty granitowe dobrane do interesującej Cię kolorystyki i budżetu.',
-    mapa: 'https://maps.google.com/?q=Krylow+ul.+Hrubieszowska+33+gmina+Mircze',
+    mapa: 'https://www.google.com/maps/search/?api=1&query=GRANBET%20Kry%C5%82%C3%B3w%20ul.%20Hrubieszowska%2033&query_place_id=ChIJIxditWXtJEcRygeov9Tj0rM',
   },
   {
     tytul: 'Biuro handlowe — Hrubieszów',
@@ -32,7 +32,7 @@ const lokalizacje = [
     godziny: '',
     godzinySezonowe: true,
     uwaga: 'W biurze omówisz szczegóły, uzyskasz wycenę i złożysz zamówienie.',
-    mapa: 'https://maps.google.com/?q=Hrubieszow+ul.+Nowa+10',
+    mapa: 'https://www.google.com/maps/search/?api=1&query=GRANBET%20Hrubiesz%C3%B3w%20ul.%20Nowa%2010&query_place_id=ChIJkS8C03PtJEcR82nIHJPqoY8',
   },
   {
     tytul: 'Ekspozycja nagrobków — Dołhobyczów',
@@ -40,7 +40,7 @@ const lokalizacje = [
     tel: { display: '502 480 543', href: 'tel:+48502480543' },
     godziny: '',
     uwaga: 'Ekspozycja dostępna z zewnątrz. Oględziny i obsługę prosimy umawiać telefonicznie.',
-    mapa: 'https://maps.google.com/?q=Dolhobyczow+ul.+Spoldzielcza+10',
+    mapa: 'https://www.google.com/maps/search/?api=1&query=GRANBET%20Do%C5%82hobycz%C3%B3w%20ul.%20Sp%C3%B3%C5%82dzielcza%2010&query_place_id=ChIJ9zALDcLrJEcRU9jfOJODQ8s',
   },
 ];
 
