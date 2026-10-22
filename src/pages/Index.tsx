@@ -34,7 +34,7 @@ const localBusinessSchema = {
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "13:00" }
   ],
   "foundingDate": "1988",
-  "hasMap": "https://maps.google.com/?q=Krylow+ul.+Hrubieszowska+33+gmina+Mircze"
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=GRANBET%20Kry%C5%82%C3%B3w%20ul.%20Hrubieszowska%2033&query_place_id=ChIJIxditWXtJEcRygeov9Tj0rM"
 };
 
 const faqSchema = {
